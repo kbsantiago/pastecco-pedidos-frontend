@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.css'
-import pastelDesenho from '../../assets/home/desenhoPastel.png'
+import HeaderPage from '../../Components/HeaderPage'
 import pastel1 from '../../assets/pasteis/pastel1.png'
 import pastel2 from '../../assets/pasteis/pastel2.png'
 import pastel3 from '../../assets/pasteis/pastel3.png'
@@ -11,21 +11,12 @@ import pastel7 from '../../assets/pasteis/pastel7.png'
 import pastel8 from '../../assets/pasteis/pastel8.png'
 import pastel9 from '../../assets/pasteis/pastel9.png'
 
-const Home = () => {
+
+const Cardapio = () => {
   return (
     <div id="page-home">
-       <header>
-        <div class="logo">
-            <h1>Pastecco</h1>
-            <img id="pastel" src={pastelDesenho} alt="" />
-        </div>
-        <div class="links">
-            <a href="/">Sobre</a>
-            <a href="/Cardapio">Cardápio</a>
-        </div>
-
-    </header>
-
+       
+    <HeaderPage />
     <section class="cards">
 
         <div class="card">
@@ -158,4 +149,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Cardapio

@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.css'
-import chefImg from '../../assets/home/chef.png'
-import pastelDesenho from '../../assets/home/desenhoPastel.png'
+import WelcomeAbout from '../../Components/WelcomeAbout'
+import HeaderPage from '../../Components/HeaderPage'
 import pastel1 from '../../assets/pasteis/pastel1.png'
 import pastel2 from '../../assets/pasteis/pastel2.png'
 import pastel3 from '../../assets/pasteis/pastel3.png'
@@ -11,32 +11,9 @@ import pastel5 from '../../assets/pasteis/pastel5.png'
 const Home = () => {
   return (
     <div id="page-home">
-        <header>
-            <div class="logo">
-                <h1 href='/'>Pastecco</h1>
-                <img id="pastel" src={pastelDesenho} alt="pastel Desenho" />
-            </div>
-            <div class="links">
-                <a href="/">Sobre</a>
-                <a href="/Cardapio">Cardápio</a>
-            </div>
-
-        </header>
-
-        <div id="wrapper">
-            <div id="apt">
-                <h1>O verdadeiro sabor do Pastel</h1>
-                <p>Experimente os recheios mais simples (carne, queijo minas, palmito) ou, que tal conhecer os recheios mais
-                    elaborados (palmito com camarão, bacalhau, carne com ovo), passando também pelos mais exóticos
-                    (japonês)? </p>
-            </div>
-            <div id="chef">
-                <img src={chefImg} alt="Chef"/>
-            </div>
-        </div>
-        <div id="orders">
-            <h2>Top 5 mais pedidos</h2>
-        </div>
+        
+        <HeaderPage />
+        <WelcomeAbout />
 
       <section class="cards">
 

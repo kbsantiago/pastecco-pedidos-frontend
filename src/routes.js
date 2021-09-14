@@ -1,15 +1,15 @@
-import { Route, BrowserRouter } from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home'
 import Cardapio from './pages/Cardapio'
 
-const Routes = () => {
+export default function Routes() {
   return(
     <BrowserRouter>
-      <Route component={Home} path='/' exact />
-      <Route component={Cardapio} path='/cardapio' />
+      <Switch>
+        <Route component={Home} path='/' exact />
+        <Route component={Cardapio} path='/cardapio' />
+      </Switch>
     </BrowserRouter>
-  )
-}
-
-export default Routes
+)}
