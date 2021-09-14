@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.css'
-import chefImg from './chef.png'
-import pastelDesenho from '../../assets/desenhoPastel.png'
+import chefImg from '../../assets/home/chef.png'
+import pastelDesenho from '../../assets/home/desenhoPastel.png'
 import pastel1 from '../../assets/pasteis/pastel1.png'
 import pastel2 from '../../assets/pasteis/pastel2.png'
 import pastel3 from '../../assets/pasteis/pastel3.png'
@@ -13,7 +13,7 @@ const Home = () => {
     <div id="page-home">
         <header>
             <div class="logo">
-                <a href='/'>Pastecco</a>
+                <h1 href='/'>Pastecco</h1>
                 <img id="pastel" src={pastelDesenho} alt="pastel Desenho" />
             </div>
             <div class="links">
