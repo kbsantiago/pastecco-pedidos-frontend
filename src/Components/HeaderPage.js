@@ -11,7 +11,7 @@ const HeaderPage = () => {
             </div>
             <div class="links">
                 <Link className='Sobre' to='/'> Sobre </Link>
-                <Link className='Sobre' to='/Cardapio'> Cardápio </Link>
+                <Link className='Cardapio' to='/Cardapio'> Cardápio </Link>
             </div>
 
         </header>
