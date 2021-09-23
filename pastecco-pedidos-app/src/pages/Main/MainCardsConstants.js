@@ -1,4 +1,4 @@
-export const CARDS = [
+export const MAIN_CARDS = [
     {
         CARD_TITLE: "Chocolate com Morango", 
         CARD_DESCRIPTION: "Brigadeiro e morango.", 

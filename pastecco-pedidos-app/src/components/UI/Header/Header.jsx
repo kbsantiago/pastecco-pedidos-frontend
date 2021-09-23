@@ -9,8 +9,8 @@ const Header = () => {
                     alt=""/>
             </div>
             <div class="links">
-                <a href="index.html">Sobre</a>
-                <a href="cardapio.html">Cardápio</a>
+                <a href="/login">Login</a>
+                <a href="/menu">Cardápio</a>
             </div>
         </header>
     );
