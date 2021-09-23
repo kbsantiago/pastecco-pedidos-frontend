@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastelaria Pastecco</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a>Pastecco</a>
+            <img id="pastel" src="https://imagensemoldes.com.br/wp-content/uploads/2020/05/Desenho-Pastel-PNG.png"
+                alt="">
+        </div>
+        <div class="links">
+            <a href="index.html">Sobre</a>
+            <a href="cardapio.html">Cardápio</a>
+        </div>
+
+    </header>
+
+    <section class="cards">
+
+        <div class="card">
+            <div class="card__image-container">
+                <img src="https://www.receiteria.com.br/wp-content/uploads/receitas-de-pastel-de-chocolate-0.jpg"
+                    alt="pastel">
+            </div>
+            <div class="card__content">
+                <h3>Chocolate com Morango</h3>
+            </div>
+            <div class="card__info">
+                <p>Brigadeiro e morango.</p>
+                <p class="card__price">R$10,50</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__image-container">
+                <img src="data:image/jpeg;base64,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"
+                    alt="pastel">
+            </div>
+            <div class="card__content">
+                <h3>Camarão Cremoso</h3>
+            </div>
+            <div class="card__info">
+                <p>Camarão, palmito e requeijão.</p>
+                <p class="card__price">R$15,50</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__image-container">
+                <img src="https://img.riomarevoce.com/fortalezashopping/2020/05/Pastel-_frango-_requeij%C3%A3o-_40cm_cheppitos.jpg"
+                    alt="pastel">
+
+            </div>
+            <div class="card__content">
+                <h3>Frango Mineiro</h3>
+            </div>
+            <div class="card__info">
+                <p>Peito de frango desfiado, milho e requeijão.</p>
+                <p class="card__price">R$10,50</p>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card__image-container">
+                <img src="https://www.receitas-sem-fronteiras.com/media/pastel-maria_crop.jpg/rh/pastel-de-carne.jpg"
+                    alt="pastel">
+
+            </div>
+            <div class="card__content">
+                <h3>Pastel de Carne</h3>
+            </div>
+            <div class="card__info">
+                <p>Pastel de carne com ovos e azeitona</p>
+                <p class="card__price">R$7,50</p>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card__image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfnmYkRdODOX69_9LH2-2uLiHp-nRce5q2pw&usqp=CAU"
+                    alt="pastel">
+
+            </div>
+            <div class="card__content">
+                <h3>Pastel Romeu e Julieta</h3>
+            </div>
+            <div class="card__info">
+                <p>Pastel de Goiabada com Queijo Minas.</p>
+                <p class="card__price">R$17,00</p>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card__image-container">
+                <img src="https://www.emporiotambo.com.br/pub/media/wysiwyg/blog/sabores-de-pastel/xpastel_de_atum.jpeg.pagespeed.ic.YM4FAVL0Ys.webp"
+                    alt="pastel">
+
+            </div>
+            <div class="card__content">
+                <h3>Pastel de Atum</h3>
+            </div>
+            <div class="card__info">
+                <p>Pastel de Atum</p>
+                <p class="card__price">R$17,00</p>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card__image-container">
+                <img src="https://www.emporiotambo.com.br/pub/media/wysiwyg/blog/sabores-de-pastel/xpastel_de_lingui_a_toscana.jpeg.pagespeed.ic.Y3H5nidzjW.webp"
+                    alt="pastel">
+
+            </div>
+            <div class="card__content">
+                <h3>Pastel de linguiça toscana e queijo coalho</h3>
+            </div>
+            <div class="card__info">
+                <p>Pastéis de linguiça toscana em tigela.</p>
+                <p class="card__price">R$27,00</p>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <div class="card__image-container">
+                <img src="https://www.emporiotambo.com.br/pub/media/wysiwyg/blog/sabores-de-pastel/xpastel_de_pa_oca.jpeg.pagespeed.ic.BBVdzAUenQ.webp"
+                    alt="pastel">
+
+            </div>
+            <div class="card__content">
+                <h3>Pastel de paçoca</h3>
+            </div>
+            <div class="card__info">
+                <p>Pastel de paçoca com doce de leite</p>
+                <p class="card__price">R$15,00</p>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card__image-container">
+                <img src="https://www.emporiotambo.com.br/pub/media/wysiwyg/blog/sabores-de-pastel/xpastel_de_nozes.jpeg.pagespeed.ic.NBhcu1w3Ri.webp"
+                    alt="pastel">
+
+            </div>
+            <div class="card__content">
+                <h3>Pastel de nozes</h3>
+            </div>
+            <div class="card__info">
+                <p>Pastel de brigadeiro com damasco e nozes</p>
+                <p class="card__price">R$35,00</p>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+</body>
+
+
+
+
+</html>
