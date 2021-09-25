@@ -1,0 +1,144 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap';
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    max-width: 780px;
+    margin: 0 auto;
+    font-family: Roboto-Regular;
+}
+
+header {
+    padding: 16px 0px 16px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr
+   
+}
+
+.logo {
+
+    font-size: 24px;
+    opacity: 0.7;
+
+
+}
+#pastel {
+     height: 25px;
+     width: 25px;   
+     
+}
+
+.links {
+    text-align: center;
+
+}
+
+.links a {
+    color:black;
+    font-size: 16px;
+    line-height: 32px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+ 
+.links a:hover {
+    color: rgb(228, 52, 52);
+    transition: color 700ms;
+}
+
+#wrapper {
+    font-family: Roboto-Bold;
+    background-color: #fbdfdb;
+    border-radius: 15px;
+    position: relative;
+    height: 300px;
+}
+
+#apt {
+    padding:40px 0;
+   
+}
+
+#wrapper h1 {
+    font-size: 24px;
+    padding: 16px;
+    opacity: 0.75;
+}
+
+#wrapper p {
+    padding: 16px;
+    font-family: Roboto-Regular;
+    font-size: 14px;
+    max-width: 260px;
+  
+    
+}
+
+#chef {
+    position: absolute;
+    right: 100px;
+    top: 5px;
+   
+}
+#chef img {
+    height: 250px;
+    width: 200px;
+}
+
+#orders { 
+    font-size: 12px;
+    margin-top: 32px ;
+    padding: 12px;
+    opacity: 0.75;
+}
+
+.cards {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 14px;
+
+ }
+
+
+
+ .card__image-container img {
+    width: 250px;
+    height: 150px;
+    border-radius: 15px ;
+}
+
+.card__content, .card__info {
+    padding: 5px;
+}
+.card__content h3{
+    font-size: 16px;
+    opacity: 0.75;
+    color: rgb(206, 82, 82);
+}
+.card__info{
+    font-size: 11px;
+    position: relative;
+
+
+}
+.card__price { 
+    background-color: yellow;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    padding: 1px;
+    position: absolute;
+    top: 0px;
+    right: -1px;
+    border-radius: 8px;
+    font-size: 11px;
+
+}
+
