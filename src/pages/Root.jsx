@@ -16,7 +16,7 @@ const PagesRoot = () => (
     <StoreProvider>
       <Switch>
         <Route path="/login" component={PagesLogin} />
-        <Route path="/" component={PagesMain} />
+        <Route path="/" component={PagesMain} exact/>
         <Route path="/menu" component={PagesMenu} />
         <RoutesPrivate path="/home" component={PagesHome} />
       </Switch>

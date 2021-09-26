@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <header>
             <div class="logo">
-                <a href='/main'>Pastecco</a>
+                <a href='/'>Pastecco</a>
                 <img id="pastel" src="https://imagensemoldes.com.br/wp-content/uploads/2020/05/Desenho-Pastel-PNG.png"
                     alt=""/>
             </div>
