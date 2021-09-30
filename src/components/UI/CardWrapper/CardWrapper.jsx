@@ -6,10 +6,10 @@ const CardWrapper = (props) => {
     const cardsArray = props.cards.map((card) => {
         return (
             <Card
-                imgPath={card.CARD_IMAGE_PATH}
-                title={card.CARD_TITLE}
-                description={card.CARD_DESCRIPTION}
-                price={card.CARD_PRICE}
+                imgPath={card.image_url}
+                title={card.name}
+                description={card.description}
+                price={card.price}
             />
         )
     });
