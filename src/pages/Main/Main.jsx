@@ -3,18 +3,37 @@ import './Main.css';
 import Header from 'components/UI/Header/Header';
 import Wrapper from 'components/UI/Wrapper/Wrapper';
 import Orders from 'components/UI/Orders/Orders';
+import Basket from 'components/UI/Basket/Basket';
+import BasketDetails from 'components/UI/BasketDetails/BasketDetails';
+import Payment from 'components/UI/Payment/Payment';
+import PaymentWay from 'components/UI/PaymentWay/PaymentWay'
+import PaymentFinish from 'components/UI/PaymentFinish/PaymentFinish'
 import CardWrapper from 'components/UI/CardWrapper/CardWrapper';
-import { MAIN_CARDS } from './MainCardsConstants'
+import { useEffect, useState } from 'react';
+import { getTopFive } from 'services/api';
 
 const PagesMain = () => {
+    const [topFiveState, setTopFive] = useState([]);
+
+    useEffect(() => {
+        getTopFive().then(response => {
+            setTopFive(response.data)
+        })
+    }, []);
+
     return (
         <>
             <Header />
             <Wrapper />
             <Orders/>
             <CardWrapper
-                cards={MAIN_CARDS}
+                cards={topFiveState}
             />
+            <Basket/>
+            <BasketDetails/>
+            <Payment/>
+            <PaymentWay/>
+            <PaymentFinish/>
         </>
     );
 };

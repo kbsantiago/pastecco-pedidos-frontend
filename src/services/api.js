@@ -25,3 +25,27 @@ export const getProducts = async () => {
 
   return api.get('/products', headers)
 };
+
+export const getTopFive = async () => {
+  const requestTokenData = await getApiToken()
+  const token = requestTokenData.data.token
+
+  const headers = {
+    headers: {
+      Authorization: `Baerer ${token}`
+    }
+  }
+
+  const body = [
+    {
+      "name": "pastel de queijo",
+      "quantity": "2"
+    },
+    {
+      "name": "pastel de chocolate",
+      "quantity": "1"
+    }
+  ]
+
+  return api.get('/orders/top-five', headers, body)
+};
