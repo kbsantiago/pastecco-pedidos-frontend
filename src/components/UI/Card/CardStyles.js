@@ -28,7 +28,9 @@ export const CardH3 = styled.h3`
     color: rgb(206, 82, 82);
 `;
 
-export const CardP = styled.p``;
+export const CardP = styled.p`
+    font-size: 14px;
+`;
 
 export const CardPrice = styled.p`
     background-color: red;

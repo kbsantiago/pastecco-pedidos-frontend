@@ -5,10 +5,12 @@ import {
     CardImageContainer,
     CardImg,
     CardInfo,
-    CardH3,
-    CardP,
+    CardTitle,
+    CardDescription,
     CardPrice,
 } from '../../SharedStyles'
+import UIButton from '../Button/Button';
+import { CARD_CONSTANTS } from './CardConstants'
 
 const Card = (props) => {
     return (
@@ -20,20 +22,23 @@ const Card = (props) => {
                 />
             </CardImageContainer>
             <CardContent>
-                <CardH3>
+                <CardTitle>
                     {props.title}
-                </CardH3>
+                </CardTitle>
             </CardContent>
             <CardInfo>
-                <CardP>
+                <CardDescription>
                     {props.description}
-                </CardP>
-            <CardInfo>
+                </CardDescription>
                 <CardPrice>
-                    {props.price}
+                    R$ {props.price}
                 </CardPrice>
             </CardInfo>
-            </CardInfo>
+            <UIButton
+                theme="contained-red"
+            >
+                {CARD_CONSTANTS.ADD_TO_BASKET_BUTTON}
+            </UIButton>
         </CardDiv>
     );
 }

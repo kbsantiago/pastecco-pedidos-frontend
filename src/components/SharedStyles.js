@@ -31,22 +31,29 @@ export const CardDiv = styled.div``;
 
 export const CardImg = styled.img``;
 
-export const CardH3 = styled.h3`
+export const CardTitle = styled.h3`
     font-size: 18px;
     opacity: 0.75;
     color: rgb(206, 82, 82);
 `;
 
-export const CardP = styled.p``;
+export const CardDescription = styled.div`
+    font-size: 16px;
+    padding: 8px
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+`;
 
-export const CardPrice = styled.p`
+export const CardPrice = styled.div`
+    font-size: 16px;
     background-color: red;
-    text-align: left;
+    text-align: center;
     color: white;
     font-weight: bold;
     padding: 4px;
-    position: absolute;
-    top: 0px;
     border-radius: 8px;
-    font-size: 14px;
+    margin: 12px;
 `;

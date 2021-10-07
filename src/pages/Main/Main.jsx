@@ -30,10 +30,10 @@ const PagesMain = () => {
                 cards={topFiveState}
             />
             <Basket/>
-            <BasketDetails/>
+{/*             <BasketDetails/>
             <Payment/>
             <PaymentWay/>
-            <PaymentFinish/>
+            <PaymentFinish/> */}
         </>
     );
 };
