@@ -10,6 +10,7 @@ import PagesHome from './Home/Home';
 import PagesLogin from './Login/Login';
 import PagesMain from './Main/Main';
 import PagesMenu from './Menu/Menu';
+import PagesCarrinho from './Carrinho/Carrinho'
 
 const PagesRoot = () => (
   <Router>

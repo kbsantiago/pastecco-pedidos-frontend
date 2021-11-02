@@ -12,6 +12,7 @@ const Header = () => {
             <div class="links">
                 <a href="/login">Login</a>
                 <a href="/menu">Cardápio</a>
+                <a href="/carrinho">Carrinho</a>
             </div>
         </header>
     );
