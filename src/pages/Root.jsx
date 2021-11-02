@@ -10,6 +10,7 @@ import PagesHome from './Home/Home';
 import PagesLogin from './Login/Login';
 import PagesMain from './Main/Main';
 import PagesMenu from './Menu/Menu';
+import PagesCarrinho from './Carrinho/Carrinho'
 
 const PagesRoot = () => (
   <Router>
@@ -18,6 +19,7 @@ const PagesRoot = () => (
         <Route path="/login" component={PagesLogin} />
         <Route path="/" component={PagesMain} exact/>
         <Route path="/menu" component={PagesMenu} />
+        <Route path="/carrinho" component={PagesCarrinho} />
         <RoutesPrivate path="/home" component={PagesHome} />
       </Switch>
     </StoreProvider>
