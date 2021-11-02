@@ -4,11 +4,10 @@ import {
     CardDiv,
     CardImageContainer,
     CardImg,
-    CardInfo,
     CardTitle,
     CardDescription,
-    CardPrice,
-} from '../../SharedStyles'
+    ButtonDiv,
+} from './CardStyles'
 import UIButton from '../Button/Button';
 import { CARD_CONSTANTS } from './CardConstants'
 
@@ -26,19 +25,16 @@ const Card = (props) => {
                     {props.title}
                 </CardTitle>
             </CardContent>
-            <CardInfo>
-                <CardDescription>
-                    {props.description}
-                </CardDescription>
-                <CardPrice>
-                    R$ {props.price}
-                </CardPrice>
-            </CardInfo>
-            <UIButton
-                theme="contained-red"
-            >
-                {CARD_CONSTANTS.ADD_TO_BASKET_BUTTON}
-            </UIButton>
+            <CardDescription>
+                {props.description} <b>R$ {props.price}</b>
+            </CardDescription>
+            <ButtonDiv>
+                <UIButton
+                    theme="contained-red"
+                >
+                    {CARD_CONSTANTS.ADD_TO_BASKET_BUTTON}
+                </UIButton>
+            </ButtonDiv>
         </CardDiv>
     );
 }

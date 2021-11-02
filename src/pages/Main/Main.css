@@ -19,36 +19,12 @@ header {
    
 }
 
-.logo {
-
-    font-size: 24px;
-    opacity: 0.7;
-
-
-}
 #pastel {
      height: 25px;
      width: 25px;   
      
 }
 
-.links {
-    text-align: center;
-
-}
-
-.links a {
-    color:black;
-    font-size: 16px;
-    line-height: 32px;
-    margin: 0 10px;
-    text-decoration: none;
-}
- 
-.links a:hover {
-    color: rgb(228, 52, 52);
-    transition: color 700ms;
-}
 
 #wrapper {
     font-family: Roboto-Bold;
@@ -105,8 +81,6 @@ header {
     padding: 14px;
 
  }
-
-
 
  .card__image-container img {
     width: 250px;

@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
+export const CardsWrapper = styled.section`
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 14px;
+`;
+
 export const CardImageContainer = styled.div`
     img {
         width: 250px;
@@ -12,34 +21,27 @@ export const CardContent = styled.div`
     padding: 5px;
 `;
 
-export const CardInfo = styled.div`
-    font-size: 14px;
-    position: relative;
-    padding: 5px;
-`;
-
 export const CardDiv = styled.div``;
 
 export const CardImg = styled.img``;
 
-export const CardH3 = styled.h3`
+export const CardTitle = styled.h3`
     font-size: 18px;
     opacity: 0.75;
     color: rgb(206, 82, 82);
 `;
 
-export const CardP = styled.p`
-    font-size: 14px;
+export const CardDescription = styled.div`
+    font-size: 16px;
+    position: relative;
+    padding: 5px;
+    display: flex;
+    flex-direction: column
 `;
 
-export const CardPrice = styled.p`
-    background-color: red;
-    text-align: left;
-    color: white;
-    font-weight: bold;
-    padding: 4px;
-    position: absolute;
-    top: 0px;
-    border-radius: 8px;
-    font-size: 14px;
+export const ButtonDiv = styled.div`
+    position: relative;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
 `;
