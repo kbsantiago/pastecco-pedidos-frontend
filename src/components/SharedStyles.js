@@ -25,6 +25,7 @@ export const CardInfo = styled.div`
     font-size: 14px;
     position: relative;
     padding: 5px;
+    display: flex
 `;
 
 export const CardDiv = styled.div``;

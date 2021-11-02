@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BasketHeader = styled.h2`
+export const ShoppingCartHeader = styled.h2`
     width: 323px;
     color: rgba(0,0,0,1);
     position: absolute;
@@ -28,7 +28,7 @@ export const SeparatorLine = styled.div`
     overflow: hidden;
 `;
 
-export const BasketWrapper = styled.div`
+export const ShoppingCartWrapper = styled.div`
     width: 392px;
     height: 842px;
     background: linear-gradient(rgba(250,236,233,1), rgba(255,253,252,1));

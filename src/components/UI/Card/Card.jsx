@@ -8,7 +8,7 @@ import {
     CardTitle,
     CardDescription,
     CardPrice,
-} from '../../SharedStyles'
+} from './CardStyles'
 import UIButton from '../Button/Button';
 import { CARD_CONSTANTS } from './CardConstants'
 

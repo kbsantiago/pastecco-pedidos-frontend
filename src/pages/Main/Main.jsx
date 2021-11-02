@@ -3,12 +3,8 @@ import './Main.css';
 import Header from 'components/UI/Header/Header';
 import Wrapper from 'components/UI/Wrapper/Wrapper';
 import Orders from 'components/UI/Orders/Orders';
-import Basket from 'components/UI/Basket/Basket';
-import BasketDetails from 'components/UI/BasketDetails/BasketDetails';
-import Payment from 'components/UI/Payment/Payment';
-import PaymentWay from 'components/UI/PaymentWay/PaymentWay'
-import PaymentFinish from 'components/UI/PaymentFinish/PaymentFinish'
 import CardWrapper from 'components/UI/CardWrapper/CardWrapper';
+import ShoppingCart from 'components/UI/ShoppingCart/ShoppingCart'
 import { useEffect, useState } from 'react';
 import { getTopFive } from 'services/api';
 
@@ -29,11 +25,7 @@ const PagesMain = () => {
             <CardWrapper
                 cards={topFiveState}
             />
-            <Basket/>
-{/*             <BasketDetails/>
-            <Payment/>
-            <PaymentWay/>
-            <PaymentFinish/> */}
+            <ShoppingCart/>
         </>
     );
 };
