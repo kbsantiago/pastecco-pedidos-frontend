@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import StoreContext from 'components/Store/Context';
 import UIButton from 'components/UI/Button/Button';
+import { getApiToken } from 'services/api';
 
 import './Login.css';
 
@@ -9,19 +10,20 @@ function initialState() {
   return { user: '', password: '' };
 }
 
-// substituir por uma função no arquivo service que utiliza a funcionalidade de login no backend
-function login({ user, password }) {
-  if (user === 'admin' && password === 'admin') {
-    return { token: '1234' };
-  }
-  return { error: 'Usuário ou senha inválido' };
-}
-
 const UserLogin = () => {
   const [values, setValues] = useState(initialState);
   const [error, setError] = useState(null);
   const { setToken } = useContext(StoreContext);
   const history = useHistory();
+
+  async function login({ user, password }) {
+    await getApiToken(user, password)
+    .then(result => {
+      setToken(result.data.token)
+      history.push('/')
+    })
+    .catch(error => ({ error: error.message }))
+  }
 
   function onChange(event) {
     const { value, name } = event.target;
@@ -35,12 +37,7 @@ const UserLogin = () => {
   function onSubmit(event) {
     event.preventDefault();
 
-    const { token, error } = login(values);
-
-    if (token) {
-      setToken(token);
-      return history.push('/');
-    }
+    login(values);
 
     setError(error);
     setValues(initialState);
@@ -57,8 +54,7 @@ const UserLogin = () => {
             type="text"
             name="user"
             onChange={onChange}
-            value={values.user}
-          />
+            value={values.user} />
         </div>
         <div className="user-login__form-control">
           <label htmlFor="password">Senha</label>
@@ -67,8 +63,7 @@ const UserLogin = () => {
             type="password"
             name="password"
             onChange={onChange}
-            value={values.password}
-          />
+            value={values.password} />
         </div>
         {error && (
           <div className="user-login__error">{error}</div>

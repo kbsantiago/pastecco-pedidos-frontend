@@ -4,18 +4,16 @@ const api = axios.create({
   baseURL: 'http://localhost:5000/'
 })
 
-const getApiToken = async () => {
+export const getApiToken = async (username, password) => {
   const credentials = {
-    username: 'admin',
-    password: '123qwe'
+    username: username,
+    password: password,
   }
   
   return api.post('/login', credentials);
 };
 
-export const getProducts = async () => {
-  const requestTokenData = await getApiToken()
-  const token = requestTokenData.data.token
+export const getProducts = async (token) => {
   
   const headers = {
     headers: {
@@ -26,27 +24,34 @@ export const getProducts = async () => {
   return api.get('/products', headers)
 };
 
-export const getTopFive = async () => {
-  const requestTokenData = await getApiToken()
-  const token = requestTokenData.data.token
-
+export const getTopFive = async (token) => {
+  
   const headers = {
-    headers: {
       Authorization: `Baerer ${token}`
-    }
   }
 
-  const body = [
-    {
-      "name": "pastel de queijo",
-      "quantity": "2"
-    },
-    {
-      "name": "pastel de chocolate",
-      "quantity": "1"
-    }
-  ]
-
-  return api.get('/orders/top-five', headers, body)
+  return api.post('orders/top-five', { headers })
 };
 
+const body = [
+  {
+    name: "Pastel de Carne",
+    quantity: 10
+  },
+  {
+    name: "Camarão Cremoso",
+    quantity: 11
+  },
+  {
+    name: "Frango Mineiro",
+    quantity: 12
+  },
+  {
+    name: "Pastel de Queijo",
+    quantity: 13
+  },
+  {
+    name: "Chocolate com Morango",
+    quantity: 14
+  }
+]
