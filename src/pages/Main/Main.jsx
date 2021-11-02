@@ -4,7 +4,6 @@ import Header from 'components/UI/Header/Header';
 import Wrapper from 'components/UI/Wrapper/Wrapper';
 import Orders from 'components/UI/Orders/Orders';
 import CardWrapper from 'components/UI/CardWrapper/CardWrapper';
-import ShoppingCart from 'components/UI/ShoppingCart/ShoppingCart'
 import { useEffect, useState } from 'react';
 import { getTopFive } from 'services/api';
 
@@ -25,7 +24,6 @@ const PagesMain = () => {
             <CardWrapper
                 cards={topFiveState}
             />
-            <ShoppingCart/>
         </>
     );
 };

@@ -21,13 +21,6 @@ export const CardContent = styled.div`
     padding: 5px;
 `;
 
-export const CardInfo = styled.div`
-    font-size: 14px;
-    position: relative;
-    padding: 5px;
-    display: flex
-`;
-
 export const CardDiv = styled.div``;
 
 export const CardImg = styled.img``;
@@ -40,18 +33,15 @@ export const CardTitle = styled.h3`
 
 export const CardDescription = styled.div`
     font-size: 16px;
+    position: relative;
+    padding: 5px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column
 `;
 
-export const CardPrice = styled.div`
-    font-size: 16px;
-    background-color: red;
-    text-align: center;
-    color: white;
-    font-weight: bold;
-    padding: 4px;
-    border-radius: 8px;
+export const ButtonDiv = styled.div`
+    position: relative;
+    padding: 5px;
     display: flex;
+    justify-content: center;
 `;
