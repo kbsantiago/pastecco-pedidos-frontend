@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 import StoreProvider from 'components/Store/Provider';
 import RoutesPrivate from 'components/Routes/Private/Private'
-import PagesHome from './Home/Home';
 import PagesLogin from './Login/Login';
 import PagesMain from './Main/Main';
 import PagesMenu from './Menu/Menu';
@@ -19,7 +18,7 @@ const PagesRoot = () => (
         <Route path="/login" component={PagesLogin} />
         <RoutesPrivate path="/" component={PagesMain} exact/>
         <RoutesPrivate path="/menu" component={PagesMenu} />
-        <RoutesPrivate path="/home" component={PagesHome} />
+        <RoutesPrivate path="/carrinho" component={PagesCarrinho} />
       </Switch>
     </StoreProvider>
   </Router>
