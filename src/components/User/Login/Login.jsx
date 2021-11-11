@@ -20,7 +20,7 @@ const UserLogin = () => {
     await getApiToken(user, password)
     .then(result => {
       setToken(result.data.token)
-      history.push('/')
+      history.push('/main')
     })
     .catch(error => ({ error: error.message }))
   }

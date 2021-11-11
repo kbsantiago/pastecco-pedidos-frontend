@@ -35,11 +35,24 @@
     color:black;
     font-size: 20px;
     line-height: 32px;
+    text-decoration: none;
+}
+
+.links button {
+    color:black;
+    background-color: transparent;
+    font-size: 20px;
+    line-height: 32px;
     margin: 0 10px;
     text-decoration: none;
 }
  
 .links a:hover {
+    color: rgb(228, 52, 52);
+    transition: color 700ms;
+}
+
+.links button:hover {
     color: rgb(228, 52, 52);
     transition: color 700ms;
 }

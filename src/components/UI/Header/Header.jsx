@@ -1,7 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import StoreContext from 'components/Store/Context';
 import './Header.css'
 
 const Header = () => {
+    const { setToken } = useContext(StoreContext);
+
+    function Logout() {
+        setToken(null);
+    
+        sessionStorage.removeItem('token');
+      }
+
     return (
         <header>
             <div class="logo">
@@ -10,9 +19,9 @@ const Header = () => {
                     alt=""/>
             </div>
             <div class="links">
-                <a href="/login">Login</a>
                 <a href="/menu">Cardápio</a>
                 <a href="/carrinho">Carrinho</a>
+                <button onClick={Logout}>Sair</button>
             </div>
         </header>
     );
