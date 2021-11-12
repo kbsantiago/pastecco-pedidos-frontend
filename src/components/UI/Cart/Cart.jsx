@@ -4,7 +4,7 @@ import StoreContext from 'components/Store/Context';
 import './Cart.css';
 
 const Cart = () => {
-    const { cart } = useContext(StoreContext)
+    const { cart, total, cartTotalItems } = useContext(StoreContext)
 
     return (
         <div className="cardCart">
@@ -15,16 +15,15 @@ const Cart = () => {
                             <div className="colCart">
                                 <h4><b>Carrinho</b></h4>
                             </div>
-                            <div className="colCart align-self-center text-right text-muted">3 items</div>
+                            <div className="colCart align-self-center text-right text-muted">{cartTotalItems} items</div>
                         </div>
                     </div>
                     {cart.map((cartItem) => (
                         <CartItem
-                            title={cartItem.productTitle}
-                            description={cartItem.description}
+                            title={cartItem.title}
                             price={cartItem.price}
                             quantity={cartItem.quantity}
-                            imgPath={cartItem.img}
+                            imgPath={cartItem.imgPath}
                         />
                     ))}
                     <div className="back-to-shopCart"><a href="/"> - Voltar ao Inicio</a></div>
@@ -32,7 +31,7 @@ const Cart = () => {
                 <div className="col-md-4Cart summaryCart">
                 <div className="rowCart" >
                     <div className="colCart">TOTAL</div>
-                    <div className="colCart text-right">R$ 132.00</div>
+                    <div className="colCart text-right">R$ {total}</div>
                 </div> <button className="btnCart">FINALIZAR PEDIDO</button>
                 </div>
             </div>

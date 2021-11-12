@@ -5,13 +5,15 @@ import { useLocalStorage } from "react-use-storage";
 
 const StoreProvider = ({children}) => {
     const [token, setToken] = useStorage('token');
-
     const [cart, setCart] = useLocalStorage('cart', []);
+    const [total, setTotal] = useLocalStorage('total', 0);
+    const cartTotalItems = cart.length;
 
-    function addItemToCart(productTitle, description, price, quantity, img) {
-        const itemObject = {productTitle, description, price, quantity, img};
+    function addItemToCart(title, price, quantity, imgPath) {
+        const itemObject = {title, price, quantity, imgPath}
         setCart([...cart, itemObject])
-        console.log(...cart)
+        let totalValue = parseFloat(total) + parseFloat(itemObject.price)
+        setTotal(totalValue)
     }
 
     function removeItemToCart(clickedItemIndex) {
@@ -34,6 +36,9 @@ const StoreProvider = ({children}) => {
                 addItemToCart,
                 removeItemToCart,
                 clearCart,
+                total,
+                setTotal,
+                cartTotalItems,
             }}
         >
             {children}
