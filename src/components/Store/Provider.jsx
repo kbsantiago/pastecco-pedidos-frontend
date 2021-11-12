@@ -11,9 +11,17 @@ const StoreProvider = ({children}) => {
 
     function addItemToCart(title, price, quantity, imgPath) {
         const itemObject = {title, price, quantity, imgPath}
-        setCart([...cart, itemObject])
-        let totalValue = parseFloat(total) + parseFloat(itemObject.price)
-        setTotal(totalValue)
+        const currentCart = [...cart]
+        const currentItemIndex = currentCart.findIndex((cartItem) => cartItem.title === itemObject.title);
+
+        if (currentItemIndex < 0) {
+            setCart([...cart, itemObject])
+            setTotal(parseFloat(total) + parseFloat(itemObject.price))
+        } else {
+            currentCart[currentItemIndex].quantity++
+            setCart([...cart])
+            setTotal(parseFloat(total) + parseFloat(itemObject.price))
+        }
     }
 
     function removeItemToCart(clickedItemIndex) {

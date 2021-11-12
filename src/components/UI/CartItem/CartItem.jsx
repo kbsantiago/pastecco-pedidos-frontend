@@ -9,7 +9,7 @@ const CartItem = (props) => {
                     <div className="rowCart text-muted">{props.title}</div>
                 </div>
                 <div className="colCart"> <a href="/">-</a><a href="/" className="border">{props.quantity}</a><a href="/">+</a> </div>
-                <div className="colCart">{props.price} <span className="close">&#10005;</span></div>
+                <div className="colCart">{props.price * props.quantity} <span className="close">&#10005;</span></div>
             </div>
         </div>
     )
