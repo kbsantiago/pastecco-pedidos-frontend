@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
 import CartItem from '../CartItem/CartItem';
-import { CartContext } from 'components/Store/Context';
+import StoreContext from 'components/Store/Context';
 import './Cart.css';
 
 const Cart = () => {
-    const { cart } = useContext(CartContext)
-    console.log(cart)
+    const { cart } = useContext(StoreContext)
 
     return (
         <div className="cardCart">
@@ -22,20 +21,19 @@ const Cart = () => {
                     {cart.map((cartItem) => (
                         <CartItem
                             title={cartItem.productTitle}
+                            description={cartItem.description}
                             price={cartItem.price}
                             quantity={cartItem.quantity}
+                            imgPath={cartItem.img}
                         />
                     ))}
                     <div className="back-to-shopCart"><a href="/"> - Voltar ao Inicio</a></div>
                 </div>
                 <div className="col-md-4Cart summaryCart">
-                    <form>
-                        <p>Código de Desconto</p> <input id="codeCart" placeholder="Insira o Código Aqui" />
-                    </form>
-                    <div className="rowCart" >
-                        <div className="colCart">TOTAL</div>
-                        <div className="colCart text-right">R$ 132.00</div>
-                    </div> <button className="btnCart">FINALIZAR PEDIDO</button>
+                <div className="rowCart" >
+                    <div className="colCart">TOTAL</div>
+                    <div className="colCart text-right">R$ 132.00</div>
+                </div> <button className="btnCart">FINALIZAR PEDIDO</button>
                 </div>
             </div>
         </div>

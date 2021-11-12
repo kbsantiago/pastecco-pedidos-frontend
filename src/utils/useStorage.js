@@ -16,19 +16,3 @@ export default function useStorage(key) {
 
   return [state, set, remove];
 }
-
-export function useCartStorage(key) {
-  const [state, setState] = useState(() => storage.get(key));
-
-  const set = useCallback(newValue => {
-    storage.set(key, newValue);
-    setState(newValue);
-  }, [key]);
-
-  const remove = useCallback(() => {
-    storage.remove(key);
-    setState(undefined);
-  }, [key]);
-
-  return [state, set, remove];
-}

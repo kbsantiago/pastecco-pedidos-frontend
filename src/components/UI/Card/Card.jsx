@@ -10,10 +10,10 @@ import {
 } from './CardStyles'
 import UIButton from '../Button/Button';
 import { CARD_CONSTANTS } from './CardConstants';
-import CartContext from 'components/Store/Context';
+import StoreContext from 'components/Store/Context';
 
 const Card = (props) => {
-    const { addItemToCart } = useContext(CartContext)
+    const { addItemToCart } = useContext(StoreContext)
 
     return (
         <CardDiv>
@@ -33,7 +33,7 @@ const Card = (props) => {
             </CardDescription>
             <ButtonDiv>
                 <UIButton
-                    onClick={() => addItemToCart(props.title, props.price, 1)}
+                    onClick={() => addItemToCart(props.title, props.description, props.price, 1, props.imgPath)}
                     theme="contained-red"
                 >
                     {CARD_CONSTANTS.ADD_TO_BASKET_BUTTON}

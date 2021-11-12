@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Context from './Context'
-import useStorage, { useCartStorage } from 'utils/useStorage.js';
+import useStorage from 'utils/useStorage.js';
 import { useLocalStorage } from "react-use-storage";
 
 const StoreProvider = ({children}) => {
@@ -8,8 +8,8 @@ const StoreProvider = ({children}) => {
 
     const [cart, setCart] = useLocalStorage('cart', []);
 
-    function addItemToCart(productTitle, price, quantity) {
-        const itemObject = {productTitle, price, quantity};
+    function addItemToCart(productTitle, description, price, quantity, img) {
+        const itemObject = {productTitle, description, price, quantity, img};
         setCart([...cart, itemObject]);
         console.log(cart)
     }
