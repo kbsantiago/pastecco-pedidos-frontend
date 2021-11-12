@@ -1,23 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { ShoppingCartWrapper } from './ShoppingCartStyles'
 import './ShoppingCart.css'
 import { SHOPPING_CART_CONSTANTS } from './ShoppingCartConstants';
 import UIButton from '../Button/Button';
 import CartProvider from 'components/Store/CartProvider'
-import CartContext from 'components/Store/CartContext';
 
 const ShoppingCart = () => {
-    const { cart, setCart } = useContext(CartContext)
-
-    const addItemToCart = (productName, price, quantity) => {
-        const item = {
-            productName,
-            price,
-            quantity,
-        }
-        setCart([...cart, item]);
-    }
-
 
     return (
         <CartProvider>
