@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import CartItem from '../CartItem/CartItem';
+import { CartContext } from 'components/Store/Context';
 import './Cart.css';
 
 const Cart = () => {
+    const { cart } = useContext(CartContext)
+    console.log(cart)
+
     return (
         <div className="cardCart">
             <div className="rowCartMain">
@@ -14,39 +19,13 @@ const Cart = () => {
                             <div className="colCart align-self-center text-right text-muted">3 items</div>
                         </div>
                     </div>
-                    <div className="rowCart border-top border-bottom">
-                        <div className="rowCart mainCart align-items-center">
-                            <div className="col-2Cart"><img className="img-fluid" src="https://i.imgur.com/1GrakTl.jpg" alt='/' /></div>
-                            <div className="colCart">
-                                <div className="rowCart text-muted">Shirt</div>
-                                <div className="rowCart">Cotton T-shirt</div>
-                            </div>
-                            <div className="colCart"> <a href="/">-</a><a href="/" className="border">1</a><a href="/">+</a> </div>
-                            <div className="colCart">R$ 44.00 <span className="close">&#10005;</span></div>
-                        </div>
-                    </div>
-                    <div className="rowCart">
-                        <div className="rowCart mainCart align-items-center">
-                            <div className="col-2Cart"><img className="img-fluid" src="https://i.imgur.com/ba3tvGm.jpg" alt='/' /></div>
-                            <div className="colCart">
-                                <div className="rowCart text-muted">Shirt</div>
-                                <div className="rowCart">Cotton T-shirt</div>
-                            </div>
-                            <div className="colCart"> <a href="/">-</a><a href="/" className="borderCart">1</a><a href="/">+</a> </div>
-                            <div className="colCart">R$ 44.00 <span className="closeCart">&#10005;</span></div>
-                        </div>
-                    </div>
-                    <div className="rowCart border-top border-bottom">
-                        <div className="rowCart mainCart align-items-center">
-                            <div className="col-2Cart"><img className="img-fluid" src="https://i.imgur.com/pHQ3xT3.jpg" alt='/' /></div>
-                            <div className="colCart">
-                                <div className="rowCart text-muted">Shirt</div>
-                                <div className="rowCart">Cotton T-shirt</div>
-                            </div>
-                            <div className="col"> <a href="/">-</a><a href="/" className="border">1</a><a href="/">+</a> </div>
-                            <div className="col">R$ 44.00 <span className="close">&#10005;</span></div>
-                        </div>
-                    </div>
+                    {cart.map((cartItem) => (
+                        <CartItem
+                            title={cartItem.productTitle}
+                            price={cartItem.price}
+                            quantity={cartItem.quantity}
+                        />
+                    ))}
                     <div className="back-to-shopCart"><a href="/"> - Voltar ao Inicio</a></div>
                 </div>
                 <div className="col-md-4Cart summaryCart">

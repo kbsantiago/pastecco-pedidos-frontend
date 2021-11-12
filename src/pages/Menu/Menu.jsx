@@ -10,7 +10,6 @@ const PagesMain = () => {
     const { token } = useContext(StoreContext);
 
     useEffect(() => {
-        console.log(token)
         getProducts(token).then(response => {
             setProducts(response.data)
         })

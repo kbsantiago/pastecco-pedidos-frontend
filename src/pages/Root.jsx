@@ -23,9 +23,7 @@ const PagesRoot = () => {
             <Route exact path="/">
             {!token ? <Redirect to="/main" /> : <PagesLogin />}
             </Route>
-            <Route exact path="/login">
-            {!token ? <Redirect to="/main" /> : <PagesLogin />}
-            </Route>
+            <Route path="/login" component={PagesLogin}/>
             <RoutesPrivate path="/main" component={PagesMain} exact/>
             <RoutesPrivate path="/menu" component={PagesMenu} />
             <RoutesPrivate path="/carrinho" component={PagesCarrinho} />
