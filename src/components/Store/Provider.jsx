@@ -10,8 +10,8 @@ const StoreProvider = ({children}) => {
 
     function addItemToCart(productTitle, description, price, quantity, img) {
         const itemObject = {productTitle, description, price, quantity, img};
-        setCart([...cart, itemObject]);
-        console.log(cart)
+        setCart([...cart, itemObject])
+        console.log(...cart)
     }
 
     function removeItemToCart(clickedItemIndex) {
