@@ -24,10 +24,10 @@ const StoreProvider = ({children}) => {
         }
     }
 
-    function removeItemToCart(clickedItemIndex) {
-        const filteredCart = cart.filter(
-            (cartItem) => cart.IndexOf(cartItem) !== clickedItemIndex
-        );
+    function removeItemToCart(title) {
+        const clickedCartItem = cart.find((cartItem) => cartItem.title === title);
+        const filteredCart = cart.filter((cartItem) => cartItem !== clickedCartItem);
+        setTotal(parseFloat(total) - parseFloat(clickedCartItem.price * clickedCartItem.quantity))
         setCart(filteredCart);
     }
 

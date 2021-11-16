@@ -1,10 +1,13 @@
 import React, { useContext } from 'react'
 import StoreContext from 'components/Store/Context';
+import UIButton from '../Button/Button';
+import { FaRegTrashAlt } from 'react-icons/fa';
 
 const CartItem = (props) => {
     const {
         addQuantityToCartItem,
         removeQuantityToCartItem,
+        removeItemToCart,
     } = useContext(StoreContext)
 
     return (
@@ -14,8 +17,19 @@ const CartItem = (props) => {
                 <div className="colCart">
                     <div className="rowCart text-muted">{props.title}</div>
                 </div>
-                <div className="colCart"> <button onClick={() => removeQuantityToCartItem(props.title, props.price)}>-</button><a href="/" className="border">{props.quantity}</a><button onClick={() => addQuantityToCartItem(props.title, props.price)}>+</button> </div>
-                <div className="colCart">{props.price * props.quantity} <span className="close">&#10005;</span></div>
+                <div className="colCart"> 
+                    <UIButton onClick={() => removeQuantityToCartItem(props.title, props.price)}>-</UIButton>
+                    <div className="quantity">{props.quantity}</div>
+                    <UIButton onClick={() => addQuantityToCartItem(props.title, props.price)}>+</UIButton>
+                </div>
+                <div className="colCart">
+                    <div className="itemprice">{props.price * props.quantity}</div>
+                    <UIButton
+                        onClick={() => removeItemToCart(props.title)}
+                        className="close">
+                            <FaRegTrashAlt />
+                    </UIButton>
+                </div>
             </div>
         </div>
     )

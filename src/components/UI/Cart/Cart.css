@@ -76,6 +76,8 @@
 .col-2Cart,
 .colCart {
     padding: 0 1vh;
+    display: flex;
+    align-items: center;
 }
 
 .colCart {
@@ -151,7 +153,6 @@ input:focus::-webkit-input-placeholder {
     box-shadow: none;
     color: white;
     -webkit-box-shadow: none;
-    -webkit-user-select: none;
     transition: none
 }
 
@@ -173,4 +174,14 @@ a:hover {
     background-repeat: no-repeat;
     background-position-x: 95%;
     background-position-y: center
+}
+
+.quantity {
+    margin: 10px;
+}
+
+.itemprice {
+    display: flex;
+    align-items: center;
+    margin: 10px;
 }
