@@ -33,6 +33,24 @@ const StoreProvider = ({children}) => {
 
     function clearCart() {
         setCart([])
+        setTotal(0)
+    }
+
+    function addQuantityToCartItem(title, price) {
+        const currentCart = [...cart]
+        const currentItemIndex = currentCart.findIndex((cartItem) => cartItem.title === title);
+        currentCart[currentItemIndex].quantity++
+        setCart([...cart])
+        setTotal(parseFloat(total) + parseFloat(price))
+    }
+    
+
+    function removeQuantityToCartItem(title, price) {
+        const currentCart = [...cart]
+        const currentItemIndex = currentCart.findIndex((cartItem) => cartItem.title === title);
+        currentCart[currentItemIndex].quantity--
+        setCart([...cart])
+        setTotal(parseFloat(total) - parseFloat(price))
     }
 
     return (
@@ -47,6 +65,8 @@ const StoreProvider = ({children}) => {
                 total,
                 setTotal,
                 cartTotalItems,
+                addQuantityToCartItem,
+                removeQuantityToCartItem,
             }}
         >
             {children}

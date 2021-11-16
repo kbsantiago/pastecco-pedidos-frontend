@@ -28,6 +28,8 @@ UIButton.propTypes = {
   theme: oneOf([
     'bordered-green',
     'contained-green',
+    'contained-orange',
+    'contained-red-cart'
   ]),
 };
 
