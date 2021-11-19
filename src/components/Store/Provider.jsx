@@ -5,6 +5,7 @@ import { useLocalStorage } from "react-use-storage";
 
 const StoreProvider = ({children}) => {
     const [token, setToken] = useStorage('token');
+    const [username, setUsername] = useStorage('username');
     const [cart, setCart] = useLocalStorage('cart', []);
     const [total, setTotal] = useLocalStorage('total', 0);
     const cartTotalItems = cart.length;
@@ -71,6 +72,8 @@ const StoreProvider = ({children}) => {
                 cartTotalItems,
                 addQuantityToCartItem,
                 removeQuantityToCartItem,
+                username,
+                setUsername
             }}
         >
             {children}

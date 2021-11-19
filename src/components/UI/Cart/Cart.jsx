@@ -11,10 +11,11 @@ const Cart = (props) => {
         cartTotalItems,
         clearCart,
         token,
+        username,
     } = useContext(StoreContext)
 
     const requestBody = {
-        customerName: 'admin',
+        customerName: username,
         status: "created",
         paymentType: "credit card",
         amount: total,
@@ -22,8 +23,8 @@ const Cart = (props) => {
             const itemObject = {
                 orderId: "",
                 productId: cartItem.productId,
-                quantity: cartItem.quantity,
-                price: cartItem.price
+                quantity: `${cartItem.quantity}`,
+                price: parseFloat(cartItem.price)
             }
             return itemObject
         }),

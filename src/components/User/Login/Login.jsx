@@ -13,12 +13,13 @@ function initialState() {
 const UserLogin = () => {
   const [values, setValues] = useState(initialState);
   const [error, setError] = useState(null);
-  const { setToken } = useContext(StoreContext);
+  const { setToken, setUsername } = useContext(StoreContext);
   const history = useHistory();
 
   async function login({ user, password }) {
     await getApiToken(user, password)
     .then(result => {
+      setUsername(result.data.user.username)
       setToken(result.data.token)
       history.push('/main')
     })
