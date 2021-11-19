@@ -99,12 +99,13 @@ img {
 }
 
 .back-to-shopCart {
-    margin-top: 4.5rem
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 h5 {
     margin-top: 4vh
-}
+}px
 
 hr {
     margin-top: 1.25rem
