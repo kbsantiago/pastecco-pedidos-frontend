@@ -9,8 +9,8 @@ const StoreProvider = ({children}) => {
     const [total, setTotal] = useLocalStorage('total', 0);
     const cartTotalItems = cart.length;
 
-    function addItemToCart(title, price, quantity, imgPath) {
-        const itemObject = {title, price, quantity, imgPath}
+    function addItemToCart(title, price, quantity, imgPath, productId) {
+        const itemObject = {title, price, quantity, imgPath, productId}
         const currentCart = [...cart]
         const currentItemIndex = currentCart.findIndex((cartItem) => cartItem.title === itemObject.title);
 

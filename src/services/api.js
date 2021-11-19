@@ -30,3 +30,14 @@ export const getTopFive = async (token) => {
 
   return api.get('orders/top-five', { headers: headers })
 };
+
+export const createOrderPost = async (token, requestBody) => {
+  
+  const headers = {
+    Authorization: `Baerer ${token}`
+  }
+
+  console.log(requestBody)
+
+  return api.post('orders/', { requestBody }, { headers: headers })
+};

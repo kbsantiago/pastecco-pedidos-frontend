@@ -10,6 +10,7 @@ const CardWrapper = (props) => {
                 title={card.name}
                 description={card.description}
                 price={card.price}
+                productId={card.id}
             />
         )
     });

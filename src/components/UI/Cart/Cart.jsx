@@ -4,13 +4,30 @@ import StoreContext from 'components/Store/Context';
 import './Cart.css';
 import UIButton from '../Button/Button';
 
-const Cart = () => {
+const Cart = (props) => {
     const {
         cart,
         total,
         cartTotalItems,
         clearCart,
+        token,
     } = useContext(StoreContext)
+
+    const requestBody = {
+        customerName: 'admin',
+        status: "created",
+        paymentType: "credit card",
+        amount: total,
+        items: cart.map((cartItem) => {
+            const itemObject = {
+                orderId: "",
+                productId: cartItem.productId,
+                quantity: cartItem.quantity,
+                price: cartItem.price
+            }
+            return itemObject
+        }),
+    }
 
     return (
         <div className="cardCart">
@@ -47,6 +64,7 @@ const Cart = () => {
                 </div>
                 <UIButton
                     theme='contained-red-cart'
+                    onClick={() => props.onClick(token, requestBody)}
                 >
                     FINALIZAR PEDIDO
                 </UIButton>

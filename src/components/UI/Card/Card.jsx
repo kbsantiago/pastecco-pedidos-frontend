@@ -33,7 +33,7 @@ const Card = (props) => {
             </CardDescription>
             <ButtonDiv>
                 <UIButton
-                    onClick={() => addItemToCart(props.title, props.price, 1, props.imgPath)}
+                    onClick={() => addItemToCart(props.title, props.price, 1, props.imgPath, props.productId)}
                     theme="contained-red"
                 >
                     {CARD_CONSTANTS.ADD_TO_BASKET_BUTTON}

@@ -44,39 +44,44 @@ const UserLogin = () => {
   }
 
   return (
-    <div className="user-login">
-      <h1 className="user-login__title">Acessar o Sistema</h1>
-      <form onSubmit={onSubmit}>
-        <div className="user-login__form-control">
-          <label htmlFor="user">Usuário</label>
-          <input
-            id="user"
-            type="text"
-            name="user"
-            onChange={onChange}
-            value={values.user} />
+    <div className="wrapper">
+      <div className="user-login">
+        <div class="Logo">
+          <h1 className="user-login__title">Pastecco</h1>
+          <img id="pastel" src="https://imagensemoldes.com.br/wp-content/uploads/2020/05/Desenho-Pastel-PNG.png" alt=""/>
         </div>
-        <div className="user-login__form-control">
-          <label htmlFor="password">Senha</label>
-          <input
-            id="password"
-            type="password"
-            name="password"
-            onChange={onChange}
-            value={values.password} />
-        </div>
-        {error && (
-          <div className="user-login__error">{error}</div>
-        )}
-        <UIButton
-          type="submit"
-          theme="contained-green"
-          className="user-login__submit-button"
-          rounded
-        >
-          Entrar
-        </UIButton>
-      </form>
+        <form onSubmit={onSubmit}>
+          <div className="user-login__form-control">
+            <label htmlFor="user">Usuário</label>
+            <input
+              id="user"
+              type="text"
+              name="user"
+              onChange={onChange}
+              value={values.user} />
+          </div>
+          <div className="user-login__form-control">
+            <label htmlFor="password">Senha</label>
+            <input
+              id="password"
+              type="password"
+              name="password"
+              onChange={onChange}
+              value={values.password} />
+          </div>
+          {error && (
+            <div className="user-login__error">{error}</div>
+          )}
+          <UIButton
+            type="submit"
+            theme="contained-red-login"
+            className="user-login__submit-button"
+            rounded
+          >
+            Entrar
+          </UIButton>
+        </form>
+      </div>
     </div>
   );
 };

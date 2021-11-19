@@ -4,9 +4,11 @@
   }
   
   .user-login__title {
+    font-family: 'Roboto-light';
     font-size: 40px;
-    color: #0ABDE3;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 15px;
     text-align: center;
   }
   
@@ -19,10 +21,12 @@
   .user-login__form-control label {
     margin-bottom: 5px;
     color: #979797;
-    font-size: 16px;
+    font-size: 18px;
   }
   
   .user-login__form-control input {
+    font-family: 'Roboto-light';
+    font-size: 16px;
     border-radius: 4px;
     border: 1px solid #BBBBBB;
     height: 36px;
@@ -33,4 +37,21 @@
     width: 100%;
     margin-top: 30px;
     margin-bottom: 30px;
+  }
+
+  .wrapper {
+    background-color:rgba(251.00000023841858, 223.00000190734863, 219.0000021457672, 1);
+    width:600px;
+    height:500px;
+    position:absolute;
+    border-top-left-radius:36px;
+    border-top-right-radius:36px;
+    border-bottom-left-radius:36px;
+    border-bottom-right-radius:36px;
+  }
+
+  .Logo { 
+    display: flex;
+    justify-content: center;
+    align-items: baseline
   }
