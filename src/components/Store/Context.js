@@ -9,7 +9,8 @@ const StoreContext = createContext({
     setCart: () => {},
     total: null,
     setTotal: () => {},
-
+    paymentType: null,
+    setPaymentType: () => {},
 })
 
 export default StoreContext;

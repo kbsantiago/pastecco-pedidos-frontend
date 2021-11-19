@@ -3,6 +3,7 @@ import CartItem from '../CartItem/CartItem';
 import StoreContext from 'components/Store/Context';
 import './Cart.css';
 import UIButton from '../Button/Button';
+import PaymentType from '../PaymentType/PaymentType';
 
 const Cart = (props) => {
     const {
@@ -12,12 +13,14 @@ const Cart = (props) => {
         clearCart,
         token,
         username,
+        paymentType,
+        setPaymentType,
     } = useContext(StoreContext)
 
     const requestBody = {
         customerName: username,
         status: "created",
-        paymentType: "credit card",
+        paymentType: paymentType,
         amount: total,
         items: cart.map((cartItem) => {
             const itemObject = {
@@ -29,6 +32,10 @@ const Cart = (props) => {
             return itemObject
         }),
     }
+
+    function onChangePaymentType(value) {
+        setPaymentType(value);
+      }
 
     return (
         <div className="cardCart">
@@ -57,6 +64,9 @@ const Cart = (props) => {
                         >Limpar carrinho
                         </UIButton>
                     </div>
+                    <PaymentType
+                        onChangeValue={onChangePaymentType}
+                    />
                 </div>
                 <div className="col-md-4Cart summaryCart">
                 <div className="rowCart" >

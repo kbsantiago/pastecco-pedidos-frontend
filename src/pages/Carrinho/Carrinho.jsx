@@ -4,7 +4,6 @@ import Cart from 'components/UI/Cart/Cart';
 import { createOrderPost } from '../../services/api'
 
 function createOrder(token, body) {
-    console.log(body)
     createOrderPost(token, body)
 }
 
