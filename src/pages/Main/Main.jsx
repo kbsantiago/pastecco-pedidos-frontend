@@ -3,7 +3,7 @@ import './Main.css';
 import StoreContext from 'components/Store/Context';
 import Header from 'components/UI/Header/Header';
 import Wrapper from 'components/UI/Wrapper/Wrapper';
-import Orders from 'components/UI/Orders/Orders';
+import TopFiveTitle from 'components/UI/TopFiveTitle/TopFiveTitle';
 import CardWrapper from 'components/UI/CardWrapper/CardWrapper';
 import { getTopFive } from 'services/api';
 
@@ -21,7 +21,7 @@ const PagesMain = () => {
         <>
             <Header />
             <Wrapper />
-            <Orders/>
+            <TopFiveTitle/>
             <CardWrapper
                 cards={topFiveState}
             />
