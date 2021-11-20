@@ -10,7 +10,7 @@ import RoutesPrivate from 'components/Routes/Private/Private'
 import PagesLogin from './Login/Login';
 import PagesMain from './Main/Main';
 import PagesMenu from './Menu/Menu';
-import PagesCarrinho from './Carrinho/Carrinho'
+import PagesCart from './Cart/Cart'
 import StoreContext from 'components/Store/Context';
 
 const PagesRoot = () => {
@@ -26,7 +26,7 @@ const PagesRoot = () => {
             <Route path="/login" component={PagesLogin}/>
             <RoutesPrivate path="/main" component={PagesMain} exact/>
             <RoutesPrivate path="/menu" component={PagesMenu} />
-            <RoutesPrivate path="/carrinho" component={PagesCarrinho} />
+            <RoutesPrivate path="/cart" component={PagesCart} />
           </Switch>
       </StoreProvider>
     </Router>

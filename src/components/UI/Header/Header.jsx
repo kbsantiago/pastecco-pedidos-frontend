@@ -20,7 +20,7 @@ const Header = () => {
             </div>
             <div class="links">
                 <a href="/menu">Cardápio</a>
-                <a href="/carrinho">Carrinho</a>
+                <a href="/cart">Carrinho</a>
                 <button onClick={Logout}>Sair</button>
             </div>
         </header>

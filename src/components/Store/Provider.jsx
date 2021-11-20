@@ -8,7 +8,6 @@ const StoreProvider = ({children}) => {
     const [username, setUsername] = useStorage('username');
     const [cart, setCart] = useLocalStorage('cart', []);
     const [total, setTotal] = useLocalStorage('total', 0);
-    const [paymentType, setPaymentType] = useStorage('paymentType');
     const cartTotalItems = cart.length;
 
     function addItemToCart(title, price, quantity, imgPath, productId) {
@@ -75,8 +74,6 @@ const StoreProvider = ({children}) => {
                 removeQuantityToCartItem,
                 username,
                 setUsername,
-                paymentType,
-                setPaymentType,
             }}
         >
             {children}

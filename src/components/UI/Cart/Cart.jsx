@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import CartItem from '../CartItem/CartItem';
 import StoreContext from 'components/Store/Context';
 import './Cart.css';
@@ -6,6 +6,8 @@ import UIButton from '../Button/Button';
 import PaymentType from '../PaymentType/PaymentType';
 
 const Cart = (props) => {
+    const [paymentType, setPaymentType] = useState('')
+
     const {
         cart,
         total,
@@ -13,8 +15,6 @@ const Cart = (props) => {
         clearCart,
         token,
         username,
-        paymentType,
-        setPaymentType,
     } = useContext(StoreContext)
 
     const requestBody = {
@@ -34,6 +34,7 @@ const Cart = (props) => {
     }
 
     function onChangePaymentType(value) {
+        props.setErrorMsg("")
         setPaymentType(value);
       }
 
@@ -46,7 +47,7 @@ const Cart = (props) => {
                             <div className="colCart">
                                 <h4><b>Carrinho</b></h4>
                             </div>
-                            <div className="colCart align-self-center text-right text-muted">{cartTotalItems} items</div>
+                            <div className="items-quantity">{cartTotalItems} items</div>
                         </div>
                     </div>
                     {cart.map((cartItem) => (
@@ -54,8 +55,7 @@ const Cart = (props) => {
                             title={cartItem.title}
                             price={cartItem.price}
                             quantity={cartItem.quantity}
-                            imgPath={cartItem.imgPath}
-                        />
+                            imgPath={cartItem.imgPath} />
                     ))}
                     <div className="back-to-shopCart">
                         <UIButton
@@ -65,20 +65,22 @@ const Cart = (props) => {
                         </UIButton>
                     </div>
                     <PaymentType
-                        onChangeValue={onChangePaymentType}
-                    />
+                        onChangeValue={onChangePaymentType} />
                 </div>
                 <div className="col-md-4Cart summaryCart">
-                <div className="rowCart" >
-                    <div className="colCart">TOTAL</div>
-                    <div className="colCart text-right">R$ {total}</div>
-                </div>
-                <UIButton
-                    theme='contained-red-cart'
-                    onClick={() => props.onClick(token, requestBody)}
-                >
-                    FINALIZAR PEDIDO
-                </UIButton>
+                    <div className="rowCart">
+                        <div className="colCart">TOTAL</div>
+                        <div className="colCart text-right">R$ {total}</div>
+                    </div>
+                    <UIButton
+                        theme='contained-red-cart'
+                        onClick={() => props.onClick(token, requestBody)}
+                    >
+                        FINALIZAR PEDIDO
+                    </UIButton>
+                    {props.errorMsg && (
+                    <h4 className="error-message">{props.errorMsg}</h4>
+                    )}
                 </div>
             </div>
         </div>

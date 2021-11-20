@@ -1,19 +1,20 @@
 import React from 'react'
 import { RadioGroup, RadioButton } from 'react-radio-buttons';
+import './PaymentType.css';
 
 const PaymentType = (props) => {
 
     return (
         <>
-        <h4>Escolha sua forma de pagamento</h4>
+        <h4 className="radio-title">Escolha sua forma de pagamento</h4>
         <RadioGroup onChange={props.onChangeValue} horizontal>
-            <RadioButton value="money">
+            <RadioButton pointColor={'red'} value="money">
                 Dinheiro
             </RadioButton>
-            <RadioButton value="credit card">
+            <RadioButton pointColor={'red'} value="credit card">
                 Cartão de Débito
             </RadioButton>
-            <RadioButton value="debit card">
+            <RadioButton pointColor={'red'} value="debit card">
                 Cartão de Crédito
             </RadioButton>
         </RadioGroup>

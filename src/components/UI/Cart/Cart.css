@@ -186,3 +186,16 @@ a:hover {
     align-items: center;
     margin: 10px;
 }
+
+.items-quantity {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.error-message {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(251, 130, 137);
+    text-align: center;
+}
