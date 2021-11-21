@@ -27,15 +27,6 @@
     background-color: #1DD1A1;
     color: #fff;
   }
-  
-  
-  .span-status--contained-green-disabled {
-    background-color: #1DD1A1;
-    color: #fff;
-    cursor:text;
-    position: relative;
-    min-width: 100px;
-  }
 
   .span-status--contained-green {
     background-color: #1DD1A1;
@@ -107,4 +98,37 @@
     border-top-right-radius:15px;
     border-bottom-left-radius:15px;
     border-bottom-right-radius:15px;
+  }
+
+  .span-status--contained-green-disabled {
+    background-color: #1DD1A1;
+    color: #fff;
+    cursor:text;
+    position: relative;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .span-status--contained-orange-disabled {
+    background-color:orange;
+    color: #fff;
+    cursor:text;
+    position: relative;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .span-status--contained-red-disabled {
+    background-color:red;
+    color: #fff;
+    cursor:text;
+    position: relative;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }

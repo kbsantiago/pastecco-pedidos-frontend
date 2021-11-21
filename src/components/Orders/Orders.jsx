@@ -8,17 +8,26 @@ const Orders = (props) => {
     const { username } = useContext(StoreContext)
     const ordersArray = props.orders.map((order) => {
         if (username === order.customerName) {
-            return (
-                {
-                    imageUrl: "https://imagensemoldes.com.br/wp-content/uploads/2020/05/Desenho-Pastel-PNG.png",
-                    number: order.number,
-                    costumerName: order.customerName,
-                    status: <SpanStatus
-                        theme='contained-green-disabled'
-                    >{order.status}
-                    </SpanStatus>,
-                }
-            )
+            let theme = ''
+            if (order.status === 'finalizado') {
+                theme = 'contained-green-disabled'
+            }
+            else if (order.status === 'em andamento') {
+                theme = 'contained-orange-disabled'
+            }
+            else if (order.status === 'criado') {
+                theme = 'contained-red-disabled'
+            }
+            const tableData = {
+                imageUrl: "https://imagensemoldes.com.br/wp-content/uploads/2020/05/Desenho-Pastel-PNG.png",
+                number: order.number,
+                costumerName: order.customerName,
+                status: <SpanStatus
+                    theme={theme}
+                >{order.status}
+                </SpanStatus>,
+            }
+            return tableData
         } return null
         
     });
