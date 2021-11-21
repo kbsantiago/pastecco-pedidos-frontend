@@ -95,7 +95,8 @@ a {
 }
 
 img {
-    width: 3.5rem
+    width: 6rem;
+    height:4rem
 }
 
 .back-to-shopCart {
@@ -179,6 +180,11 @@ a:hover {
 
 .quantity {
     margin: 10px;
+}
+
+.imagem-pastel {
+    max-width: 100%;
+    height: auto;
 }
 
 .itemprice {

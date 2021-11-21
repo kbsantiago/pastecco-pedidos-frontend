@@ -1,12 +1,10 @@
 import React, { useContext, useState } from 'react';
-import MaterialTable from 'material-table';
 import CartTable from 'components/CartTable/CartTable';
 import UIButton from '../Button/Button';
 import { FaRegTrashAlt } from 'react-icons/fa';
 import StoreContext from 'components/Store/Context';
 import './Cart.css';
 import PaymentType from '../PaymentType/PaymentType';
-import tableIcons from 'components/MaterialTableIcons/MaterialTableIcons';
 
 const Cart = (props) => {
     const [paymentType, setPaymentType] = useState('')
@@ -48,12 +46,12 @@ const Cart = (props) => {
         {
             title: cartItem.title,
             price: cartItem.price,
-            quantity: cartItem.quantity,
-            quantityComponent: <>
-            <UIButton onClick={() => removeQuantityToCartItem(cartItem.title, cartItem.price)}>-</UIButton>
-            <div className="quantity">{cartItem.quantity}</div>
-            <UIButton onClick={() => addQuantityToCartItem(cartItem.title, cartItem.price)}>+</UIButton>
-            </>,
+            quantityComponent: 
+            <div className="quantity-wrapper">
+               <UIButton onClick={() => removeQuantityToCartItem(cartItem.title, cartItem.price)}>-</UIButton>
+                <div className="quantity">{cartItem.quantity}</div>
+                <UIButton onClick={() => addQuantityToCartItem(cartItem.title, cartItem.price)}>+</UIButton>
+            </div>,
             imageUrl: cartItem.imgPath,
             removeComponent: <UIButton
                         onClick={() => removeItemToCart(cartItem.title)}
@@ -67,16 +65,9 @@ const Cart = (props) => {
         <div className="cardCart">
             <div className="rowCartMain">
                 <div className="col-md-8Cart cartCart">
-                    <div className="titleCart">
-                        <div className="rowCart">
-                            <div className="colCart">
-                                <h4><b>Carrinho</b></h4>
-                            </div>
-                            <div className="items-quantity">{cartTotalItems} items</div>
-                        </div>
-                    </div>
                     <CartTable
                         productsArray={productsArray}
+                        cartTotalItems={cartTotalItems}
                     />
                     <div className="back-to-shopCart">
                         <UIButton
