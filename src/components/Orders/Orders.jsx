@@ -6,30 +6,34 @@ import tableIcons from 'components/MaterialTableIcons/MaterialTableIcons';
 
 const Orders = (props) => {
     const { username } = useContext(StoreContext)
-    const ordersArray = props.orders.map((order) => {
-        if (username === order.customerName) {
-            let theme = ''
-            if (order.status === 'finalizado') {
-                theme = 'contained-green-disabled'
-            }
-            else if (order.status === 'em andamento') {
-                theme = 'contained-orange-disabled'
-            }
-            else if (order.status === 'criado') {
-                theme = 'contained-red-disabled'
-            }
-            const tableData = {
-                imageUrl: "https://imagensemoldes.com.br/wp-content/uploads/2020/05/Desenho-Pastel-PNG.png",
-                number: order.number,
-                costumerName: order.customerName,
-                status: <SpanStatus
-                    theme={theme}
-                >{order.status}
-                </SpanStatus>,
-            }
+
+    function isCostumerOrder(tableData) {
+        if (tableData.costumerName === username) {
             return tableData
-        } return null
-        
+        }
+      }
+
+    const ordersArray = props.orders.map((order) => {
+        let theme = ''
+        if (order.status === 'finalizado') {
+            theme = 'contained-green-disabled'
+        }
+        else if (order.status === 'em andamento') {
+            theme = 'contained-orange-disabled'
+        }
+        else if (order.status === 'criado') {
+            theme = 'contained-red-disabled'
+        }
+        const tableData = {
+            imageUrl: "https://imagensemoldes.com.br/wp-content/uploads/2020/05/Desenho-Pastel-PNG.png",
+            number: order.number,
+            costumerName: order.customerName,
+            status: <SpanStatus
+                theme={theme}
+            >{order.status}
+            </SpanStatus>,
+        }
+        return tableData
     });
 
     return (
@@ -68,7 +72,7 @@ const Orders = (props) => {
                             }
                         }
                     ]}
-                    data={ordersArray}
+                    data={ordersArray.filter(isCostumerOrder)}
                     title="Pedidos"
                     options={{
                         pageSize: 10,

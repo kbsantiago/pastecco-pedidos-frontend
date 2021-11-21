@@ -24,9 +24,9 @@ const SpanStatus = ({ children, to, theme, rounded, className }) => {
 SpanStatus.propTypes = {
   rounded: bool,
   theme: oneOf([
-    'contained-green',
-    'contained-orange',
-    'contained-red'
+    'contained-green-disabled',
+    'contained-orange-disabled',
+    'contained-red-disabled'
   ]),
 };
 
