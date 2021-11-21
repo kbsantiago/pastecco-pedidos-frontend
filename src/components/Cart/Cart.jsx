@@ -1,9 +1,12 @@
 import React, { useContext, useState } from 'react';
-import CartItem from '../CartItem/CartItem';
+import MaterialTable from 'material-table';
+import CartTable from 'components/CartTable/CartTable';
+import UIButton from '../Button/Button';
+import { FaRegTrashAlt } from 'react-icons/fa';
 import StoreContext from 'components/Store/Context';
 import './Cart.css';
-import UIButton from '../Button/Button';
 import PaymentType from '../PaymentType/PaymentType';
+import tableIcons from 'components/MaterialTableIcons/MaterialTableIcons';
 
 const Cart = (props) => {
     const [paymentType, setPaymentType] = useState('')
@@ -15,6 +18,9 @@ const Cart = (props) => {
         clearCart,
         token,
         username,
+        removeItemToCart,
+        addQuantityToCartItem,
+        removeQuantityToCartItem
     } = useContext(StoreContext)
 
     const requestBody = {
@@ -38,6 +44,25 @@ const Cart = (props) => {
         setPaymentType(value);
       }
 
+    const productsArray = cart.map((cartItem) => (
+        {
+            title: cartItem.title,
+            price: cartItem.price,
+            quantity: cartItem.quantity,
+            quantityComponent: <>
+            <UIButton onClick={() => removeQuantityToCartItem(cartItem.title, cartItem.price)}>-</UIButton>
+            <div className="quantity">{cartItem.quantity}</div>
+            <UIButton onClick={() => addQuantityToCartItem(cartItem.title, cartItem.price)}>+</UIButton>
+            </>,
+            imageUrl: cartItem.imgPath,
+            removeComponent: <UIButton
+                        onClick={() => removeItemToCart(cartItem.title)}
+                    className="close">
+                        <FaRegTrashAlt />
+                    </UIButton>,
+        }
+    ));
+
     return (
         <div className="cardCart">
             <div className="rowCartMain">
@@ -50,13 +75,9 @@ const Cart = (props) => {
                             <div className="items-quantity">{cartTotalItems} items</div>
                         </div>
                     </div>
-                    {cart.map((cartItem) => (
-                        <CartItem
-                            title={cartItem.title}
-                            price={cartItem.price}
-                            quantity={cartItem.quantity}
-                            imgPath={cartItem.imgPath} />
-                    ))}
+                    <CartTable
+                        productsArray={productsArray}
+                    />
                     <div className="back-to-shopCart">
                         <UIButton
                             theme='contained-orange'

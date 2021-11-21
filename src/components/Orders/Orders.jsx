@@ -30,6 +30,7 @@ const Orders = (props) => {
             costumerName: order.customerName,
             status: <SpanStatus
                 theme={theme}
+                contenteditable="false"
             >{order.status}
             </SpanStatus>,
         }
