@@ -12,6 +12,7 @@ import PagesMain from './Main/Main';
 import PagesMenu from './Menu/Menu';
 import PagesCart from './Cart/Cart'
 import StoreContext from 'components/Store/Context';
+import PagesOrders from './Orders/Orders';
 
 const PagesRoot = () => {
   
@@ -27,6 +28,7 @@ const PagesRoot = () => {
             <RoutesPrivate path="/main" component={PagesMain} exact/>
             <RoutesPrivate path="/menu" component={PagesMenu} />
             <RoutesPrivate path="/cart" component={PagesCart} />
+            <RoutesPrivate path="/orders" component={PagesOrders} />
           </Switch>
       </StoreProvider>
     </Router>

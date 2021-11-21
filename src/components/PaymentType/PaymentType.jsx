@@ -14,7 +14,7 @@ const PaymentType = (props) => {
             <RadioButton pointColor={'red'} value="credit card">
                 Cartão de Débito
             </RadioButton>
-            <RadioButton pointColor={'red'} value="debit card">
+            <RadioButton pointColor={'red'} value="credit card">
                 Cartão de Crédito
             </RadioButton>
         </RadioGroup>

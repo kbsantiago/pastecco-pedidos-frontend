@@ -1,0 +1,110 @@
+.span-status {
+    padding: 9px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 200ms;
+    transition-property: background-color, color;
+    border: 0;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .span-status--rounded {
+    border-radius: 100px;
+  }
+  
+  .span-status--bordered-green {
+    padding: 7px 10px;
+    border-color: #1DD1A1;
+    color: #1DD1A1;
+    border: 2px solid;
+  }
+  
+  .span-status--bordered-green:hover {
+    background-color: #1DD1A1;
+    color: #fff;
+  }
+  
+  
+  .span-status--contained-green-disabled {
+    background-color: #1DD1A1;
+    color: #fff;
+    cursor:text;
+    position: relative;
+    min-width: 100px;
+  }
+
+  .span-status--contained-green {
+    background-color: #1DD1A1;
+    color: #fff;
+  }
+  
+  .span-status--contained-green:hover {
+    background-color: #00b894;
+    border-color: #00b894;
+    color: #fff;
+  }
+
+  .span-status--contained-orange {
+    background-color: rgba(255,120,91,1);
+    color: #fff;
+  }
+  
+  .span-status--contained-orange:hover {
+    background-color: rgba(255,120,91,1);
+    border-color: rgba(255,120,91,1);
+    color: #fff;
+  }
+
+  .span-status--contained-red {
+    width: 240px;
+    height: 30px;
+    background: red;
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+
+  .span-status--contained-red-cart {
+    margin-top: 10px;
+    width: 650px;
+    height: 30px;
+    background: red;
+    opacity: 1;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+
+  .span-status--contained-red-login { 
+    color:rgba(255, 255, 255, 1);
+    background-color:rgba(230.56249290704727, 123.92734050750732, 123.92734050750732, 1);
+    font-family:Segoe UI;
+    text-align:center;
+    font-size:18px;
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+  }

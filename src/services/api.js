@@ -37,5 +37,16 @@ export const createOrderPost = async (token, requestBody) => {
     Authorization: `Baerer ${token}`
   }
 
+  console.log(requestBody.items)
+
   return api.post('orders/', { requestBody }, { headers: headers })
+};
+
+export const getOrders = async (token) => {
+  
+  const headers = {
+    Authorization: `Baerer ${token}`
+  }
+
+  return api.get('orders/', { headers: headers })
 };
