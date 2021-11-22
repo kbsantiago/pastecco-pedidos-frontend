@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import MaterialTable from 'material-table';
 import StoreContext from 'components/Store/Context';
-import SpanStatus from 'components/SpanStatus/SpanStatus';
-import tableIcons from 'components/MaterialTableIcons/MaterialTableIcons';
+import SpanStatus from './components/SpanStatus';
+import OrdersTable from './components/OrdersTable';
+import { THEMES, IMAGE_URL, STATUS } from './OrdersComponentConstants';
 
 const OrdersComponent = (props) => {
     const { username } = useContext(StoreContext)
@@ -15,17 +15,17 @@ const OrdersComponent = (props) => {
 
     const ordersArray = props.orders.map((order) => {
         let theme = ''
-        if (order.status === 'finalizado') {
-            theme = 'contained-green-disabled'
+        if (order.status === STATUS.FINALIZADO) {
+            theme = THEMES.FINALIZADO
         }
-        else if (order.status === 'em andamento') {
-            theme = 'contained-orange-disabled'
+        else if (order.status === STATUS.EM_ANDAMENTO) {
+            theme = THEMES.EM_ANDAMENTO
         }
-        else if (order.status === 'criado') {
-            theme = 'contained-red-disabled'
+        else if (order.status === STATUS.CRIADO) {
+            theme = THEMES.CRIADO
         }
         const tableData = {
-            imageUrl: "https://imagensemoldes.com.br/wp-content/uploads/2020/05/Desenho-Pastel-PNG.png",
+            imageUrl: IMAGE_URL,
             number: order.number,
             amount: order.amount,
             costumerName: order.customerName,
@@ -39,69 +39,11 @@ const OrdersComponent = (props) => {
     });
 
     return (
-        <div className="cardCart">
-            <div className="col-md-8Cart cartCart">
-                <MaterialTable
-                    columns={[
-                        {
-                            title: '',
-                            field: 'imageUrl',
-                            render: (rowData) => <img id="pastel" src={rowData.imageUrl} alt=""/>,
-                            cellStyle: {
-                                textAlign:'center',
-                            },
-                        },
-                        {
-                            title: 'Número',
-                            field: 'number',
-                            type: 'numeric',
-                            cellStyle: {
-                                textAlign:'center',
-                            },
-                        },
-                        {
-                            title: 'Preço Total',
-                            field: 'amount',
-                            render: (rowData) => `R$ ${parseFloat(rowData.amount).toFixed(2)}`,
-                            type: 'numeric',
-                            cellStyle: {
-                                textAlign:'center',
-                            },
-                        },
-                        {
-                            title: 'Cliente',
-                            field: 'costumerName',
-                            cellStyle: {
-                                textAlign:'center',
-                            }
-                        },
-                        {
-                            title: 'Status',
-                            field: 'status',
-                            cellStyle: {
-                                textAlign:'center',
-                            }
-                        }
-                    ]}
-                    data={ordersArray.filter(isCostumerOrder)}
-                    title="Pedidos"
-                    options={{
-                        pageSize: 10,
-                        headerStyle: {
-                            textAlign: 'center',
-                            flexDirection: 'row',
-                          }
-                      }}
-                    localization={{
-                        toolbar: {
-                            searchPlaceholder: 'Digite o número do pedido'
-                    }
-                    }}
-                    icons={tableIcons}
+                <OrdersTable
+                    ordersArray={ordersArray.filter(isCostumerOrder)}
                 />
-            </div>
-        </div>
     );
+                    
 };
 
 export default OrdersComponent;
