@@ -6,7 +6,7 @@ import StoreContext from 'components/Store/Context';
 import './Cart.css';
 import PaymentType from '../PaymentType/PaymentType';
 
-const Cart = (props) => {
+const CartComponent = (props) => {
     const [paymentType, setPaymentType] = useState('')
 
     const {
@@ -23,7 +23,7 @@ const Cart = (props) => {
 
     const requestBody = {
         customerName: username,
-        status: "created",
+        status: "criado",
         paymentType: paymentType,
         amount: total,
         items: cart.map((cartItem) => {
@@ -99,4 +99,4 @@ const Cart = (props) => {
     );
 };
 
-export default Cart;
+export default CartComponent;

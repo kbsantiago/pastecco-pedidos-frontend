@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from 'components/Header/Header';
-import Cart from 'components/Cart/Cart';
+import CartComponent from 'components/Cart/Cart';
 import { createOrderPost } from '../../services/api'
 
 const PagesCart = () => {
@@ -20,7 +20,7 @@ const PagesCart = () => {
     return (
         <>
             <Header />
-            <Cart
+            <CartComponent
                 onClick={handleCreateOrder}
                 errorMsg={errorMsg}
                 setErrorMsg={setErrorMsg}
