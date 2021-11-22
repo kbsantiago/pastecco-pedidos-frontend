@@ -39,7 +39,7 @@
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
     padding: 4vh;
-    color: rgb(65, 65, 65)
+    color: rgb(65, 65, 65);
 }
 
 @media(max-width:767px) {
@@ -205,4 +205,9 @@ a:hover {
     font-weight: bold;
     color: rgb(251, 130, 137);
     text-align: center;
+}
+
+.finalizar-pedido-button {
+    display: flex;
+    justify-content: center;
 }

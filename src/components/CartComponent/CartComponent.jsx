@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
-import CartTable from 'components/CartTable/CartTable';
-import UIButton from '../Button/Button';
-import { FaRegTrashAlt } from 'react-icons/fa';
+import CartTable from 'components/CartComponent/components/CartTable';
+import UIButton from 'components/Button/Button';
 import StoreContext from 'components/Store/Context';
-import './Cart.css';
+import './CartComponent.css';
 import PaymentType from '../PaymentType/PaymentType';
+import Quantity from './components/Quantity'
+import RemoveItem from './components/RemoveItem'
 
 const CartComponent = (props) => {
     const [paymentType, setPaymentType] = useState('')
@@ -16,9 +17,6 @@ const CartComponent = (props) => {
         clearCart,
         token,
         username,
-        removeItemToCart,
-        addQuantityToCartItem,
-        removeQuantityToCartItem
     } = useContext(StoreContext)
 
     const requestBody = {
@@ -47,17 +45,16 @@ const CartComponent = (props) => {
             title: cartItem.title,
             price: cartItem.price * cartItem.quantity,
             quantityComponent: 
-               <>
-               <UIButton onClick={() => removeQuantityToCartItem(cartItem.title, cartItem.price)}>-</UIButton>
-               <div className="quantity">{cartItem.quantity}</div>
-               <UIButton onClick={() => addQuantityToCartItem(cartItem.title, cartItem.price)}>+</UIButton>
-               </>,
+               <Quantity
+                    title={cartItem.title}
+                    price={cartItem.price}
+                    quantity={cartItem.quantity}
+                />,
             imageUrl: cartItem.imgPath,
-            removeComponent: <UIButton
-                        onClick={() => removeItemToCart(cartItem.title)}
-                    className="close">
-                        <FaRegTrashAlt />
-                    </UIButton>,
+            removeComponent:
+                <RemoveItem
+                    title={cartItem.title}
+                />,
         }
     ));
 
@@ -84,12 +81,14 @@ const CartComponent = (props) => {
                         <div className="colCart">TOTAL</div>
                         <div className="colCart text-right">R$ {total}</div>
                     </div>
-                    <UIButton
-                        theme='contained-red-cart'
-                        onClick={() => props.onClick(token, requestBody)}
-                    >
-                        FINALIZAR PEDIDO
-                    </UIButton>
+                    <div className="finalizar-pedido-button">
+                        <UIButton
+                            theme='contained-red-cart'
+                            onClick={() => props.onClick(token, requestBody)}
+                        >
+                            FINALIZAR PEDIDO
+                        </UIButton>
+                    </div>
                     {props.errorMsg && (
                     <h4 className="error-message">{props.errorMsg}</h4>
                     )}

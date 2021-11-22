@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from 'components/Header/Header';
-import CartComponent from 'components/Cart/Cart';
+import CartComponent from 'components/CartComponent/CartComponent';
 import { createOrderPost } from '../../services/api'
 
 const PagesCart = () => {
