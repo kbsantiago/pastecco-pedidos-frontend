@@ -45,13 +45,13 @@ const Cart = (props) => {
     const productsArray = cart.map((cartItem) => (
         {
             title: cartItem.title,
-            price: cartItem.price,
+            price: cartItem.price * cartItem.quantity,
             quantityComponent: 
-            <div className="quantity-wrapper">
+               <>
                <UIButton onClick={() => removeQuantityToCartItem(cartItem.title, cartItem.price)}>-</UIButton>
-                <div className="quantity">{cartItem.quantity}</div>
-                <UIButton onClick={() => addQuantityToCartItem(cartItem.title, cartItem.price)}>+</UIButton>
-            </div>,
+               <div className="quantity">{cartItem.quantity}</div>
+               <UIButton onClick={() => addQuantityToCartItem(cartItem.title, cartItem.price)}>+</UIButton>
+               </>,
             imageUrl: cartItem.imgPath,
             removeComponent: <UIButton
                         onClick={() => removeItemToCart(cartItem.title)}

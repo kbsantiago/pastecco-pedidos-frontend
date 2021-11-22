@@ -28,6 +28,7 @@ const CartTable = (props) => {
                     field: 'quantityComponent',
                     cellStyle: {
                         textAlign:'center',
+                        whiteSpace: 'nowrap'
                     },
                 },
                 {
@@ -35,7 +36,7 @@ const CartTable = (props) => {
                     field: 'price',
                     cellStyle: {
                         textAlign:'center',
-                        fontSize: '18px'
+                        fontSize: '18px',
                     }
                 },
                 {
@@ -52,8 +53,8 @@ const CartTable = (props) => {
                 pageSize: 5,
                 headerStyle: {
                     textAlign: 'center',
-                    flexDirection: 'row',
-                }            }}
+                }
+            }}
             localization={{
                 toolbar: {
                     searchPlaceholder: 'Digite o nome do produto'

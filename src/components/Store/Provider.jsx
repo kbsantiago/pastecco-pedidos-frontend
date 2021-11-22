@@ -49,7 +49,7 @@ const StoreProvider = ({children}) => {
     function removeQuantityToCartItem(title, price) {
         const currentCart = [...cart]
         const currentItemIndex = currentCart.findIndex((cartItem) => cartItem.title === title);
-        if (currentCart[currentItemIndex].quantity > 0) {
+        if (currentCart[currentItemIndex].quantity > 1) {
             currentCart[currentItemIndex].quantity--
             setCart([...cart])
             setTotal(parseFloat(total) - parseFloat(price))
