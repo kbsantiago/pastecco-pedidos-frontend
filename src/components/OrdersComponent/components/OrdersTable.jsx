@@ -1,65 +1,72 @@
 import React from 'react';
 import MaterialTable from 'material-table';
 import tableIcons from 'components/MaterialTableIcons/MaterialTableIcons';
+import {
+    SEARCH_PLACEHOLDER,
+    TABLE_TITLES,
+    TABLE_FIELDS,
+    TABLE_TYPES,
+    CURRENCY,
+    HEADER_STYLE,
+    IMAGE_ID,
+    CLASS_NAMES,
+} from '../OrdersComponentConstants';
 
 const OrdersTable = (props) => {
     return (
-        <div className="cardCart">
-            <div className="col-md-8Cart cartCart">
+        <div className={CLASS_NAMES.CARD_CART}>
+            <div className={CLASS_NAMES.CARD_CART_COL}>
                 <MaterialTable
                     columns={[
                         {
-                            title: '',
-                            field: 'imageUrl',
-                            render: (rowData) => <img id="pastel" src={rowData.imageUrl} alt=""/>,
+                            title: TABLE_TITLES.IMAGE,
+                            field: TABLE_FIELDS.IMAGE,
+                            render: (rowData) => <img id={IMAGE_ID} src={rowData.imageUrl} alt=""/>,
                             cellStyle: {
                                 textAlign:'center',
                             },
                         },
                         {
-                            title: 'Número',
-                            field: 'number',
-                            type: 'numeric',
+                            title: TABLE_TITLES.NUMERO,
+                            field: TABLE_FIELDS.NUMERO,
+                            type: TABLE_TYPES.NUMERIC,
                             cellStyle: {
                                 textAlign:'center',
                             },
                         },
                         {
-                            title: 'Preço Total',
-                            field: 'amount',
-                            render: (rowData) => `R$ ${parseFloat(rowData.amount).toFixed(2)}`,
-                            type: 'numeric',
+                            title: TABLE_TITLES.PRECO,
+                            field: TABLE_FIELDS.PRECO,
+                            render: (rowData) => `${CURRENCY} ${parseFloat(rowData.amount).toFixed(2)}`,
+                            type: TABLE_TYPES.NUMERIC,
                             cellStyle: {
                                 textAlign:'center',
                             },
                         },
                         {
-                            title: 'Cliente',
-                            field: 'costumerName',
+                            title: TABLE_TITLES.CLIENTE,
+                            field: TABLE_FIELDS.CLIENTE,
                             cellStyle: {
                                 textAlign:'center',
                             }
                         },
                         {
-                            title: 'Status',
-                            field: 'status',
+                            title: TABLE_TITLES.STATUS,
+                            field: TABLE_FIELDS.STATUS,
                             cellStyle: {
                                 textAlign:'center',
                             }
                         }
                     ]}
                     data={props.ordersArray}
-                    title="Pedidos"
+                    title={TABLE_TITLES.TITULO_TABELA}
                     options={{
                         pageSize: 10,
-                        headerStyle: {
-                            textAlign: 'center',
-                            flexDirection: 'row',
-                          }
+                        headerStyle: HEADER_STYLE
                       }}
                     localization={{
                         toolbar: {
-                            searchPlaceholder: 'Digite o número do pedido'
+                            searchPlaceholder: SEARCH_PLACEHOLDER
                     }
                     }}
                     icons={tableIcons}
