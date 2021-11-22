@@ -30,7 +30,7 @@ const CartTable = (props) => {
                     field: 'quantity',
                     render: (rowData) => <Quantity
                                             title={rowData.title}
-                                            price={rowData.price}
+                                            price={rowData.unitPrice}
                                             quantity={rowData.quantity}
                                         />,
                     cellStyle: {
@@ -40,8 +40,8 @@ const CartTable = (props) => {
                 },
                 {
                     title: 'Preço',
-                    field: 'price',
-                    render: (rowData) => `R$ ${rowData.price.toFixed(2)}`,
+                    field: 'totalPrice',
+                    render: (rowData) => `R$ ${rowData.totalPrice.toFixed(2)}`,
                     cellStyle: {
                         textAlign:'center',
                         fontSize: '18px',

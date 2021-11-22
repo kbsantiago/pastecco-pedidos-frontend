@@ -52,6 +52,7 @@ const StoreProvider = ({children}) => {
         if (currentCart[currentItemIndex].quantity > 1) {
             currentCart[currentItemIndex].quantity--
             setCart([...cart])
+            console.log(price)
             setTotal(parseFloat(total) - parseFloat(price))
         } else {
             removeItemToCart(currentCart[currentItemIndex].title)

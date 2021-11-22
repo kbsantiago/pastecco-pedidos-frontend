@@ -48,7 +48,8 @@ const CartComponent = (props) => {
     const productsArray = cart.map((cartItem) => (
         {
             title: cartItem.title,
-            price: cartItem.price * cartItem.quantity,
+            totalPrice: cartItem.price * cartItem.quantity,
+            unitPrice: cartItem.price,
             quantity: cartItem.quantity,
             imageUrl: cartItem.imgPath,
         }
@@ -75,7 +76,7 @@ const CartComponent = (props) => {
                 <div className={CSS_CLASSNAMES_AND_CONSTS.CART_SUMARY}>
                     <div className={CSS_CLASSNAMES_AND_CONSTS.ROW_CART}>
                         <div className={CSS_CLASSNAMES_AND_CONSTS.COL_CART}>{TOTAL_CONSTS.NAME}</div>
-                        <div className={CSS_CLASSNAMES_AND_CONSTS.TEXT_RIGHT}>{TOTAL_CONSTS.CURRENCY}$ {total.toFixed(2)}</div>
+                        <div className={CSS_CLASSNAMES_AND_CONSTS.TEXT_RIGHT}>{TOTAL_CONSTS.CURRENCY} {total.toFixed(2)}</div>
                     </div>
                     <div className={CSS_CLASSNAMES_AND_CONSTS.FINALIZAR_PEDIDO_BUTTON}>
                         <UIButton
