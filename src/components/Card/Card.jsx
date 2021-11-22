@@ -29,7 +29,7 @@ const Card = (props) => {
                 </CardTitle>
             </CardContent>
             <CardDescription>
-                {props.description} <b>R$ {props.price}</b>
+                {props.description} <b>R$ {parseFloat(props.price).toFixed(2)}</b>
             </CardDescription>
             <ButtonDiv>
                 <UIButton

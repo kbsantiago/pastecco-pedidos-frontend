@@ -79,7 +79,7 @@ const CartComponent = (props) => {
                 <div className="col-md-4Cart summaryCart">
                     <div className="rowCart">
                         <div className="colCart">TOTAL</div>
-                        <div className="colCart text-right">R$ {total}</div>
+                        <div className="colCart text-right">R$ {total.toFixed(2)}</div>
                     </div>
                     <div className="finalizar-pedido-button">
                         <UIButton

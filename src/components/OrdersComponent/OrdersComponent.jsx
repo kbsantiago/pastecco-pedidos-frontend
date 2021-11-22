@@ -4,7 +4,7 @@ import StoreContext from 'components/Store/Context';
 import SpanStatus from 'components/SpanStatus/SpanStatus';
 import tableIcons from 'components/MaterialTableIcons/MaterialTableIcons';
 
-const Orders = (props) => {
+const OrdersComponent = (props) => {
     const { username } = useContext(StoreContext)
 
     function isCostumerOrder(tableData) {
@@ -27,6 +27,7 @@ const Orders = (props) => {
         const tableData = {
             imageUrl: "https://imagensemoldes.com.br/wp-content/uploads/2020/05/Desenho-Pastel-PNG.png",
             number: order.number,
+            amount: order.amount,
             costumerName: order.customerName,
             status: <SpanStatus
                 theme={theme}
@@ -53,6 +54,15 @@ const Orders = (props) => {
                         {
                             title: 'Número',
                             field: 'number',
+                            type: 'numeric',
+                            cellStyle: {
+                                textAlign:'center',
+                            },
+                        },
+                        {
+                            title: 'Preço Total',
+                            field: 'amount',
+                            render: (rowData) => `R$ ${parseFloat(rowData.amount).toFixed(2)}`,
                             type: 'numeric',
                             cellStyle: {
                                 textAlign:'center',
@@ -94,4 +104,4 @@ const Orders = (props) => {
     );
 };
 
-export default Orders;
+export default OrdersComponent;

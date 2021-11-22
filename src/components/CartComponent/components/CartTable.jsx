@@ -34,6 +34,7 @@ const CartTable = (props) => {
                 {
                     title: 'Preço',
                     field: 'price',
+                    render: (rowData) => `R$ ${rowData.price.toFixed(2)}`,
                     cellStyle: {
                         textAlign:'center',
                         fontSize: '18px',

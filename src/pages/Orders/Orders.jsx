@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import StoreContext from 'components/Store/Context';
 import Header from 'components/Header/Header';
-import Orders from 'components/Orders/Orders';
+import OrdersComponent from 'components/OrdersComponent/OrdersComponent';
 import { getOrders } from 'services/api';
 
 const PagesOrders = () => {
@@ -17,7 +17,7 @@ const PagesOrders = () => {
     return (
         <>
             <Header />
-            <Orders
+            <OrdersComponent
                 orders={ordersState}
             />
         </>
