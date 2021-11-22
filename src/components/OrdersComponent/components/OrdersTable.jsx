@@ -1,6 +1,7 @@
 import React from 'react';
 import MaterialTable from 'material-table';
 import tableIcons from 'components/MaterialTableIcons/MaterialTableIcons';
+import SpanStatus from './SpanStatus';
 import {
     SEARCH_PLACEHOLDER,
     TABLE_TITLES,
@@ -25,6 +26,7 @@ const OrdersTable = (props) => {
                             cellStyle: {
                                 textAlign:'center',
                             },
+                            sorting: false
                         },
                         {
                             title: TABLE_TITLES.NUMERO,
@@ -53,6 +55,7 @@ const OrdersTable = (props) => {
                         {
                             title: TABLE_TITLES.STATUS,
                             field: TABLE_FIELDS.STATUS,
+                            render: (rowData) => <SpanStatus theme={rowData.theme} contenteditable="false">{rowData.status}</SpanStatus>,
                             cellStyle: {
                                 textAlign:'center',
                             }

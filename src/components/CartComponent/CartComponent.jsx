@@ -4,8 +4,6 @@ import UIButton from 'components/Button/Button';
 import StoreContext from 'components/Store/Context';
 import './CartComponent.css';
 import PaymentType from '../PaymentType/PaymentType';
-import Quantity from './components/Quantity'
-import RemoveItem from './components/RemoveItem'
 
 const CartComponent = (props) => {
     const [paymentType, setPaymentType] = useState('')
@@ -44,17 +42,8 @@ const CartComponent = (props) => {
         {
             title: cartItem.title,
             price: cartItem.price * cartItem.quantity,
-            quantityComponent: 
-               <Quantity
-                    title={cartItem.title}
-                    price={cartItem.price}
-                    quantity={cartItem.quantity}
-                />,
+            quantity: cartItem.quantity,
             imageUrl: cartItem.imgPath,
-            removeComponent:
-                <RemoveItem
-                    title={cartItem.title}
-                />,
         }
     ));
 

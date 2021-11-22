@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import StoreContext from 'components/Store/Context';
-import SpanStatus from './components/SpanStatus';
 import OrdersTable from './components/OrdersTable';
 import { THEMES, IMAGE_URL, STATUS } from './OrdersComponentConstants';
 
@@ -18,8 +17,8 @@ const OrdersComponent = (props) => {
         if (order.status === STATUS.FINALIZADO) {
             theme = THEMES.FINALIZADO
         }
-        else if (order.status === STATUS.EM_ANDAMENTO) {
-            theme = THEMES.EM_ANDAMENTO
+        else if (order.status === STATUS.PREPARANDO) {
+            theme = THEMES.PREPARANDO
         }
         else if (order.status === STATUS.CRIADO) {
             theme = THEMES.CRIADO
@@ -29,19 +28,16 @@ const OrdersComponent = (props) => {
             number: order.number,
             amount: order.amount,
             costumerName: order.customerName,
-            status: <SpanStatus
-                theme={theme}
-                contenteditable="false"
-            >{order.status}
-            </SpanStatus>,
+            status: order.status,
+            theme: theme,
         }
         return tableData
     });
 
     return (
-                <OrdersTable
-                    ordersArray={ordersArray.filter(isCostumerOrder)}
-                />
+        <OrdersTable
+            ordersArray={ordersArray.filter(isCostumerOrder)}
+        />
     );
                     
 };

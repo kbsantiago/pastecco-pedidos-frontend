@@ -1,7 +1,8 @@
 import React from 'react'
 import MaterialTable from 'material-table';
-
 import tableIcons from 'components/MaterialTableIcons/MaterialTableIcons';
+import Quantity from './Quantity'
+import RemoveItem from './RemoveItem'
 
 const CartTable = (props) => {
     return (
@@ -11,6 +12,7 @@ const CartTable = (props) => {
                     title: '',
                     field: 'imageUrl',
                     render: (rowData) => <img id="pastel-tabela" src={rowData.imageUrl} alt=""/>,
+                    sorting: false,
                     cellStyle: {
                         textAlign:'center',
                     },
@@ -25,7 +27,12 @@ const CartTable = (props) => {
                 },
                 {
                     title: 'Quantidade',
-                    field: 'quantityComponent',
+                    field: 'quantity',
+                    render: (rowData) => <Quantity
+                                            title={rowData.title}
+                                            price={rowData.price}
+                                            quantity={rowData.quantity}
+                                        />,
                     cellStyle: {
                         textAlign:'center',
                         whiteSpace: 'nowrap'
@@ -43,6 +50,10 @@ const CartTable = (props) => {
                 {
                     title: 'Remover',
                     field: 'removeComponent',
+                    render: (rowData) => <RemoveItem
+                                            title={rowData.title}
+                                        />,
+                    sorting: false,
                     cellStyle: {
                         textAlign:'center',
                     }
