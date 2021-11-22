@@ -9,7 +9,7 @@ import {
     ButtonDiv,
 } from './CardStyles'
 import UIButton from '../Button/Button';
-import { CARD_CONSTANTS } from './CardConstants';
+import { ADD_TO_BASKET_BUTTON, THEME, IMG_ALT } from './CardConstants';
 import StoreContext from 'components/Store/Context';
 
 const Card = (props) => {
@@ -20,7 +20,7 @@ const Card = (props) => {
             <CardImageContainer>
                 <CardImg
                     src={props.imgPath}
-                    alt="pastel"
+                    alt={IMG_ALT}
                 />
             </CardImageContainer>
             <CardContent>
@@ -34,9 +34,9 @@ const Card = (props) => {
             <ButtonDiv>
                 <UIButton
                     onClick={() => addItemToCart(props.title, props.price, 1, props.imgPath, props.productId)}
-                    theme="contained-red"
+                    theme={THEME}
                 >
-                    {CARD_CONSTANTS.ADD_TO_BASKET_BUTTON}
+                    {ADD_TO_BASKET_BUTTON}
                 </UIButton>
             </ButtonDiv>
         </CardDiv>

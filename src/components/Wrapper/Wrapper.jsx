@@ -1,15 +1,15 @@
 import React from 'react';
+import { WRAPPER_CONSTANTS, CSS_IDS, IMAGE_SOURCE } from './WrapperConstants';
 
 const Wrapper = () => {
     return (
-        <div id="wrapper">
-            <div id="apt">
-                <h1>O verdadeiro sabor do Pastel</h1>
-                <p>Experimente os recheios mais simples (carne, queijo minas, palmito) ou, que tal conhecer os recheios mais
-                    elaborados (palmito com camarão, bacalhau, carne com ovo), passando também pelos mais exóticos? </p>
+        <div id={CSS_IDS.WRAPPER}>
+            <div id={CSS_IDS.APT}>
+                <h1>{WRAPPER_CONSTANTS.TITLE}</h1>
+                <p>{WRAPPER_CONSTANTS.TEXT}</p>
             </div>
-            <div id="chef">
-                <img src="chef.png" alt=""/>
+            <div id={CSS_IDS.IMAGE}>
+                <img src={IMAGE_SOURCE} alt=""/>
             </div>
         </div>
     );
