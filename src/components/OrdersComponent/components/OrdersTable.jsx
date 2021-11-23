@@ -12,8 +12,14 @@ import {
     IMAGE_ID,
     CLASS_NAMES,
 } from '../OrdersComponentConstants';
+import { useContext } from 'react';
+import StoreContext from 'components/Store/Context';
+import { getOrders } from 'services/api';
+
 
 const OrdersTable = (props) => {
+    const { token, orders, setOrders } = useContext(StoreContext)
+
     return (
         <div className={CLASS_NAMES.CARD_CART}>
             <div className={CLASS_NAMES.CARD_CART_COL}>
@@ -26,7 +32,8 @@ const OrdersTable = (props) => {
                             cellStyle: {
                                 textAlign:'center',
                             },
-                            sorting: false
+                            sorting: false,
+                            editable: 'never'
                         },
                         {
                             title: TABLE_TITLES.NUMERO,
@@ -35,6 +42,7 @@ const OrdersTable = (props) => {
                             cellStyle: {
                                 textAlign:'center',
                             },
+                            editable: 'never'
                         },
                         {
                             title: TABLE_TITLES.PRECO,
@@ -44,21 +52,31 @@ const OrdersTable = (props) => {
                             cellStyle: {
                                 textAlign:'center',
                             },
+                            editable: 'never'
                         },
                         {
                             title: TABLE_TITLES.CLIENTE,
                             field: TABLE_FIELDS.CLIENTE,
                             cellStyle: {
                                 textAlign:'center',
-                            }
+                            },
+                            editable: 'never'
                         },
                         {
                             title: TABLE_TITLES.STATUS,
                             field: TABLE_FIELDS.STATUS,
-                            render: (rowData) => <SpanStatus theme={rowData.theme} contenteditable="false">{rowData.status}</SpanStatus>,
+                            render: (rowData) => 
+                            <SpanStatus
+                                theme={rowData.theme}
+                                contenteditable="true"
+                                orderId={rowData.id}
+                                // onBlur={e => props.onChangeStatus(token, rowData.id, e.currentTarget.innerText)}
+                            >
+                                {rowData.status}
+                            </SpanStatus>,
                             cellStyle: {
                                 textAlign:'center',
-                            }
+                            } 
                         }
                     ]}
                     data={props.ordersArray}
@@ -73,6 +91,19 @@ const OrdersTable = (props) => {
                     }
                     }}
                     icons={tableIcons}
+                    editable={{
+                        onRowUpdate: (newData, oldData) => new Promise((resolve, reject) => {
+                            const dataUpdate = [...orders];
+                            const index = oldData.tableData.id;
+                            dataUpdate[index] = newData;
+                            props.onChangeStatus(token, oldData.id ,newData.status)
+                            setTimeout(() => {
+                                resolve();
+                              }, 1000)
+                        }).then(getOrders(token).then(response => {
+                                setOrders(response.data)
+                            }))
+                    }}
                 />
             </div>
         </div>

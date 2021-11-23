@@ -5,8 +5,8 @@ import './SpanStatus.css';
 
 const cbn = 'span-status';
 
-const SpanStatus = ({ children, theme, rounded, className, contenteditable }) => {
-  const Component = 'span';
+const SpanStatus = ({ children, theme, rounded, className, contenteditable, onBlur }) => {
+  const Component = 'div';
 
   return (
     <Component
@@ -14,6 +14,7 @@ const SpanStatus = ({ children, theme, rounded, className, contenteditable }) =>
         [`${cbn}--rounded`]: rounded,
       })}
       contenteditable={contenteditable}
+      onBlur={onBlur}
     >
       {children}
     </Component>

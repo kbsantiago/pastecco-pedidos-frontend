@@ -2,9 +2,18 @@ import React, { useContext } from 'react';
 import StoreContext from 'components/Store/Context';
 import OrdersTable from './components/OrdersTable';
 import { THEMES, IMAGE_URL, STATUS } from './OrdersComponentConstants';
+import { changeStatus } from '../../services/api';
 
-const OrdersComponent = (props) => {
-    const { username } = useContext(StoreContext)
+const OrdersComponent = () => {
+    const { username, orders } = useContext(StoreContext)
+
+    function onChangeStatus(token, orderId, newValue) {
+        const requestBody = {
+            id: orderId,
+            status: `${newValue}`
+        }
+        changeStatus(token, requestBody)
+    }
 
     function isCostumerOrder(tableData) {
         if (tableData.costumerName === username) {
@@ -12,7 +21,7 @@ const OrdersComponent = (props) => {
         }
       }
 
-    const ordersArray = props.orders.map((order) => {
+    const ordersArray = orders.map((order) => {
         let theme = ''
         if (order.status === STATUS.FINALIZADO) {
             theme = THEMES.FINALIZADO
@@ -24,6 +33,7 @@ const OrdersComponent = (props) => {
             theme = THEMES.CRIADO
         }
         const tableData = {
+            id: order.id,
             imageUrl: IMAGE_URL,
             number: order.number,
             amount: order.amount,
@@ -37,6 +47,7 @@ const OrdersComponent = (props) => {
     return (
         <OrdersTable
             ordersArray={ordersArray.filter(isCostumerOrder)}
+            onChangeStatus={onChangeStatus}
         />
     );
                     

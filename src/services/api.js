@@ -48,3 +48,12 @@ export const getOrders = async (token) => {
 
   return api.get('orders/', { headers: headers })
 };
+
+export const changeStatus = async (token, requestBody) => {
+  
+  const headers = {
+    Authorization: `Baerer ${token}`
+  }
+
+  return api.patch('orders/', requestBody, { headers: headers })
+};

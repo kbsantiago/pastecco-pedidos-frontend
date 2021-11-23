@@ -11,6 +11,8 @@ const StoreContext = createContext({
     setTotal: () => {},
     paymentType: null,
     setPaymentType: () => {},
+    orders: null,
+    setOrders: () => {},
 })
 
 export default StoreContext;
