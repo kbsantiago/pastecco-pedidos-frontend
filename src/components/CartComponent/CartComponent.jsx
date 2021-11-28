@@ -21,11 +21,11 @@ const CartComponent = (props) => {
         cartTotalItems,
         clearCart,
         token,
-        username,
+        user,
     } = useContext(StoreContext)
 
     const requestBody = {
-        customerName: username,
+        customerName: user.username,
         status: STATUS_DEFAULT,
         paymentType: paymentType,
         amount: total,

@@ -12,9 +12,14 @@ import {
     IMAGE_ID,
     CLASS_NAMES,
 } from '../OrdersComponentConstants';
+import { useContext } from 'react';
+import StoreContext from 'components/Store/Context';
+import { getOrders } from 'services/api';
 
 
-const OrdersTable = (props) => {
+const OrdersTableAdmin = (props) => {
+    const { token, orders, setOrders } = useContext(StoreContext)
+
     return (
         <div className={CLASS_NAMES.CARD_CART}>
             <div className={CLASS_NAMES.CARD_CART_COL}>
@@ -84,10 +89,23 @@ const OrdersTable = (props) => {
                     }
                     }}
                     icons={tableIcons}
+                    editable={{
+                        onRowUpdate: (newData, oldData) => new Promise((resolve, reject) => {
+                            const dataUpdate = [...orders];
+                            const index = oldData.tableData.id;
+                            dataUpdate[index] = newData;
+                            props.onChangeStatus(token, oldData.id ,newData.status)
+                            setTimeout(() => {
+                                resolve();
+                              }, 1000)
+                        }).then(getOrders(token).then(response => {
+                                setOrders(response.data)
+                            }))
+                    }}
                 />
             </div>
         </div>
     );
 };
 
-export default OrdersTable;
+export default OrdersTableAdmin;

@@ -3,8 +3,8 @@ import { createContext } from "react";
 const StoreContext = createContext({
     token: null,
     setToken: () => {},
-    username: null,
-    setUsername: () => {},
+    user: null,
+    setUser: () => {},
     cart: [],
     setCart: () => {},
     total: null,

@@ -5,8 +5,7 @@ import OrdersComponent from 'components/OrdersComponent/OrdersComponent';
 import { getOrders } from 'services/api';
 
 const PagesOrders = () => {
-    const { setOrders } = useContext(StoreContext);
-    const { token } = useContext(StoreContext);
+    const { token, user, setOrders } = useContext(StoreContext);
 
     useEffect(() => {
         getOrders(token).then(response => {
@@ -17,7 +16,9 @@ const PagesOrders = () => {
     return (
         <>
             <Header />
-            <OrdersComponent/>
+            <OrdersComponent
+                user={user}
+            />
         </>
     );
 };

@@ -13,7 +13,6 @@ const PagesMain = () => {
 
     useEffect(() => {
         getTopFive(token).then(response => {
-            console.log(response.data)
             setTopFive(response.data)
         })
     }, [token]);

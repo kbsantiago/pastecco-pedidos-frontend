@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import StoreContext from 'components/Store/Context';
 import OrdersTable from './components/OrdersTable';
+import OrdersTableAdmin from './components/OrdersTableAdmin';
 import { THEMES, IMAGE_URL, STATUS } from './OrdersComponentConstants';
 import { changeStatus } from '../../services/api';
 
-const OrdersComponent = () => {
-    const { username, orders } = useContext(StoreContext)
+const OrdersComponent = (props) => {
+    const { user, orders } = useContext(StoreContext)
 
     function onChangeStatus(token, orderId, newValue) {
         const requestBody = {
@@ -16,7 +17,7 @@ const OrdersComponent = () => {
     }
 
     function isCostumerOrder(tableData) {
-        if (tableData.costumerName === username) {
+        if (tableData.costumerName === user.username) {
             return tableData
         }
       }
@@ -45,10 +46,21 @@ const OrdersComponent = () => {
     });
 
     return (
-        <OrdersTable
-            ordersArray={ordersArray.filter(isCostumerOrder)}
-            onChangeStatus={onChangeStatus}
-        />
+        <div>
+            {props.user.role==='admin' && (
+                <OrdersTableAdmin
+                    ordersArray={ordersArray}
+                    onChangeStatus={onChangeStatus}
+                />
+            )}
+            {props.user.role==='client' && (
+                <OrdersTable
+                    ordersArray={ordersArray.filter(isCostumerOrder)}
+                    onChangeStatus={onChangeStatus}
+                />
+            )}
+        </div>
+        
     );
                     
 };
