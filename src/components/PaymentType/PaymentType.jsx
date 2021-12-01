@@ -5,7 +5,8 @@ import {
     POINT_COLOR,
     RADIO_TITLES,
     RADIO_VALUES,
-    H4_CLASSNAME
+    H4_CLASSNAME,
+    COLOR
 } from './PaymentTypeConstants';
 
 const PaymentType = (props) => {
@@ -14,14 +15,20 @@ const PaymentType = (props) => {
         <>
         <h4 className={H4_CLASSNAME}>{RADIO_TITLES.FORM_TITLE}</h4>
         <RadioGroup onChange={props.onChangeValue} horizontal>
-            <RadioButton pointColor={POINT_COLOR} value={RADIO_VALUES.DINHEIRO}>
+            <RadioButton rootColor={COLOR} pointColor={POINT_COLOR} value={RADIO_VALUES.DINHEIRO}>
                 {RADIO_TITLES.DINHEIRO}
             </RadioButton>
-            <RadioButton pointColor={POINT_COLOR} value={RADIO_VALUES.CARTAO_DEBITO}>
+            <RadioButton rootColor={COLOR} pointColor={POINT_COLOR} value={RADIO_VALUES.CARTAO_DEBITO}>
                 {RADIO_TITLES.CARTAO_DEBITO}
             </RadioButton>
-            <RadioButton pointColor={POINT_COLOR} value={RADIO_VALUES.CARTAO_CREDITO}>
+            <RadioButton rootColor={COLOR} pointColor={POINT_COLOR} value={RADIO_VALUES.CARTAO_CREDITO}>
                 {RADIO_TITLES.CARTAO_CREDITO}
+            </RadioButton>
+            <RadioButton rootColor={COLOR} pointColor={POINT_COLOR} value={RADIO_VALUES.VR}>
+                {RADIO_TITLES.VR}
+            </RadioButton>
+            <RadioButton rootColor={COLOR} pointColor={POINT_COLOR} value={RADIO_VALUES.PIX}>
+                {RADIO_TITLES.PIX}
             </RadioButton>
         </RadioGroup>
         </>

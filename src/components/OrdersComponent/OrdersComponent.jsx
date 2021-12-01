@@ -33,6 +33,9 @@ const OrdersComponent = (props) => {
         else if (order.status === STATUS.CRIADO) {
             theme = THEMES.CRIADO
         }
+        else if (order.status === STATUS.CANCELADO) {
+            theme = THEMES.CANCELADO
+        }
         const tableData = {
             id: order.id,
             imageUrl: IMAGE_URL,

@@ -132,3 +132,14 @@
     justify-content: center;
     flex-wrap: wrap;
   }
+
+  .span-status--contained-yellow-disabled {
+    background-color: yellowgreen;
+    color: #fff;
+    cursor:text;
+    position: relative;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }

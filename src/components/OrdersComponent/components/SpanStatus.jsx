@@ -26,6 +26,7 @@ SpanStatus.propTypes = {
   theme: oneOf([
     'contained-green-disabled',
     'contained-orange-disabled',
+    'contained-yellow-disabled',
     'contained-red-disabled'
   ]),
 };

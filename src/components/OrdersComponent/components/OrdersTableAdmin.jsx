@@ -11,11 +11,12 @@ import {
     HEADER_STYLE,
     IMAGE_ID,
     CLASS_NAMES,
+    PAGINATION,
 } from '../OrdersComponentConstants';
 import { useContext } from 'react';
 import StoreContext from 'components/Store/Context';
 import { getOrders } from 'services/api';
-
+import { COMBOBOX_STATUS } from '../OrdersComponentConstants';
 
 const OrdersTableAdmin = (props) => {
     const { token, orders, setOrders } = useContext(StoreContext)
@@ -74,7 +75,8 @@ const OrdersTableAdmin = (props) => {
                             </SpanStatus>,
                             cellStyle: {
                                 textAlign:'center',
-                            } 
+                            },
+                            lookup: COMBOBOX_STATUS
                         }
                     ]}
                     data={props.ordersArray}
@@ -86,6 +88,13 @@ const OrdersTableAdmin = (props) => {
                     localization={{
                         toolbar: {
                             searchPlaceholder: SEARCH_PLACEHOLDER
+                    },
+                    header: {
+                        actions: ''
+                    },
+                    pagination: PAGINATION,
+                    body: {
+                        emptyDataSourceMessage: 'Nenhum pedido para ser exibido'
                     }
                     }}
                     icons={tableIcons}

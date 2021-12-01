@@ -3,6 +3,7 @@ import MaterialTable from 'material-table';
 import tableIcons from 'components/MaterialTableIcons/MaterialTableIcons';
 import Quantity from './Quantity'
 import RemoveItem from './RemoveItem'
+import { PAGINATION } from '../CartComponentConstants';
 
 const CartTable = (props) => {
     return (
@@ -69,7 +70,11 @@ const CartTable = (props) => {
             }}
             localization={{
                 toolbar: {
-                    searchPlaceholder: 'Digite o nome do produto'
+                    searchPlaceholder: 'Digite o nome do produto',
+            },
+            pagination: PAGINATION,
+            body: {
+                emptyDataSourceMessage: 'Nenhum item no carrinho',
             }
             }}
             icons={tableIcons}

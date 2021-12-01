@@ -81,6 +81,16 @@ const OrdersTable = (props) => {
                     localization={{
                         toolbar: {
                             searchPlaceholder: SEARCH_PLACEHOLDER
+                    },
+                    pagination: {
+                        firstTooltip: 'Primeira página',
+                        previousTooltip: 'Página anterior',
+                        nextTooltip: 'Próxima página',
+                        lastTooltip: 'Última página',
+                        labelRowsSelect: 'linhas'
+                    },
+                    body: {
+                        emptyDataSourceMessage: 'Nenhum pedido para ser exibido'
                     }
                     }}
                     icons={tableIcons}

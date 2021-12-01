@@ -28,3 +28,11 @@ export const TOTAL_CONSTS = {
     NAME: 'TOTAL',
     CURRENCY: 'R$'
 }
+
+export const PAGINATION = {
+    firstTooltip: 'Primeira página',
+    previousTooltip: 'Página anterior',
+    nextTooltip: 'Próxima página',
+    lastTooltip: 'Última página',
+    labelRowsSelect: 'linhas'
+}

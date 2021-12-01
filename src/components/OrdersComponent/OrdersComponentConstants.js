@@ -1,13 +1,15 @@
 export const THEMES = {
     FINALIZADO: 'contained-green-disabled',
     PREPARANDO: 'contained-orange-disabled',
-    CRIADO: 'contained-red-disabled',
+    CRIADO: 'contained-yellow-disabled',
+    CANCELADO: 'contained-red-disabled'
 }
 
 export const STATUS = {
     FINALIZADO: 'finalizado',
     PREPARANDO: 'preparando',
     CRIADO: 'criado',
+    CANCELADO: 'cancelado'
 }
 
 export const IMAGE_URL = 'https://imagensemoldes.com.br/wp-content/uploads/2020/05/Desenho-Pastel-PNG.png'
@@ -47,4 +49,19 @@ export const IMAGE_ID = 'pastel'
 export const CLASS_NAMES = {
     CARD_CART: 'cardCart',
     CARD_CART_COL: 'col-md-8Cart cartCart'
+}
+
+export const COMBOBOX_STATUS = {
+    finalizado: 'finalizado',
+    preparando: 'preparando',
+    criado: 'criado',
+    cancelado: 'cancelado'
+}
+
+export const PAGINATION = {
+    firstTooltip: 'Primeira página',
+    previousTooltip: 'Página anterior',
+    nextTooltip: 'Próxima página',
+    lastTooltip: 'Última página',
+    labelRowsSelect: 'linhas'
 }
