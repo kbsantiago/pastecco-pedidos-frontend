@@ -12,10 +12,10 @@ const PagesCart = () => {
 
     function handleCreateOrder(token, body) {
         if (body.amount === 0) {
-            setErrorMsg('Adicione itens ao carrinho antes de finalizar o pedido')
+            setErrorMsg('Adicione itens ao carrinho antes de confirmar o pedido')
         } 
         else if (body.paymentType === "") {
-            setErrorMsg('Selecione a forma de pagamento antes de finalizar o pedido')
+            setErrorMsg('Selecione a forma de pagamento antes de confirmar o pedido')
         } else {
             createOrderPost(token, body).then((res) => {
                 alert(

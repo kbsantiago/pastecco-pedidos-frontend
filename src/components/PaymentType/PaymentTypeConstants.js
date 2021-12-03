@@ -1,6 +1,6 @@
 export const POINT_COLOR = 'red';
 
-export const COLOR = '#aaaaaa';
+export const COLOR = 'black';
 
 export const RADIO_TITLES = {
     DINHEIRO: 'Dinheiro',

@@ -1,7 +1,7 @@
 export const STATUS_DEFAULT = 'criado'
 
 export const BUTTONS_NAMES = {
-    ORDER_BUTTON: 'Finalizar pedido',
+    ORDER_BUTTON: 'Confirmar pedido',
     CLEAR_CART: 'Limpar carrinho'
 }
 
