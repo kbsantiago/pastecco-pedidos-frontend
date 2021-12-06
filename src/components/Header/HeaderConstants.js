@@ -16,7 +16,8 @@ export const HEADER_NAMES = {
 export const HEADER_CSS_CONSTS = {
     IMAGE_ID: 'pastel',
     LOGO: 'logo',
-    LINKS: 'links'
+    LINKS: 'links',
+    HEADER: 'header'
 }
 
 export const IMAGE_SOURCE = 'https://imagensemoldes.com.br/wp-content/uploads/2020/05/Desenho-Pastel-PNG.png'

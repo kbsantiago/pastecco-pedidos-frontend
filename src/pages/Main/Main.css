@@ -12,13 +12,6 @@ body {
     font-family: Roboto-Regular;
 }
 
-header {
-    padding: 16px 0px 16px 0px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr
-   
-}
-
 #pastel {
      height: 25px;
      width: 25px;   

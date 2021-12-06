@@ -1,8 +1,9 @@
 .logo {
-
     font-size: 24px;
     font-family: Roboto-Regular;
     opacity: 0.7;
+    display: flex;
+    align-items: center;
 }
 
 .logo a {
@@ -21,7 +22,6 @@
 #pastel {
      height: 25px;
      width: 25px;   
-     
 }
 
 .links {
@@ -55,4 +55,11 @@
 .links button:hover {
     color: rgb(228, 52, 52);
     transition: color 700ms;
+}
+
+
+header {
+    padding: 16px 0px 16px 0px;
+    display: flex;
+    justify-content: space-around;
 }
