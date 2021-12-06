@@ -15,11 +15,10 @@ import {
 } from '../OrdersComponentConstants';
 import { useContext } from 'react';
 import StoreContext from 'components/Store/Context';
-import { getOrders } from 'services/api';
 import { COMBOBOX_STATUS } from '../OrdersComponentConstants';
 
 const OrdersTableAdmin = (props) => {
-    const { token, orders, setOrders } = useContext(StoreContext)
+    const { token, orders } = useContext(StoreContext)
 
     return (
         <div className={CLASS_NAMES.CARD_CART}>
@@ -107,9 +106,8 @@ const OrdersTableAdmin = (props) => {
                             setTimeout(() => {
                                 resolve();
                               }, 1000)
-                        }).then(getOrders(token).then(response => {
-                                setOrders(response.data)
-                            }))
+                        }).then(props.onGetOrders(token)
+                        )
                     }}
                 />
             </div>

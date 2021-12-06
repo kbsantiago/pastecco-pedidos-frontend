@@ -4,9 +4,10 @@ import OrdersTable from './components/OrdersTable';
 import OrdersTableAdmin from './components/OrdersTableAdmin';
 import { THEMES, IMAGE_URL, STATUS } from './OrdersComponentConstants';
 import { changeStatus } from '../../services/api';
+import { getOrders } from 'services/api';
 
 const OrdersComponent = (props) => {
-    const { user, orders } = useContext(StoreContext)
+    const { user, orders, setOrders } = useContext(StoreContext)
 
     function onChangeStatus(token, orderId, newValue) {
         const requestBody = {
@@ -14,6 +15,12 @@ const OrdersComponent = (props) => {
             status: `${newValue}`
         }
         changeStatus(token, requestBody)
+    }
+
+    function onGetOrders (token){
+        getOrders(token).then(response => {
+            setOrders(response.data)
+        })
     }
 
     function isCostumerOrder(tableData) {
@@ -54,12 +61,12 @@ const OrdersComponent = (props) => {
                 <OrdersTableAdmin
                     ordersArray={ordersArray}
                     onChangeStatus={onChangeStatus}
+                    onGetOrders={onGetOrders}
                 />
             )}
             {props.user.role==='client' && (
                 <OrdersTable
                     ordersArray={ordersArray.filter(isCostumerOrder)}
-                    onChangeStatus={onChangeStatus}
                 />
             )}
         </div>
