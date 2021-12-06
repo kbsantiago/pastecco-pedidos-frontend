@@ -32,11 +32,18 @@ header {
     border-radius: 15px;
     position: relative;
     height: 300px;
+    min-width: 320px;
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 #apt {
     padding:40px 0;
-   
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
 }
 
 #wrapper h1 {
@@ -48,18 +55,16 @@ header {
 #wrapper p {
     padding: 16px;
     font-family: Roboto-Regular;
-    font-size: 14px;
-    max-width: 260px;
-  
-    
+    font-size: 16px;
+    max-width: 450px;
 }
 
 #chef {
-    position: absolute;
-    right: 100px;
-    top: 5px;
-   
+    padding: 20px;
+    display: flex;
+    align-items: center;
 }
+
 #chef img {
     height: 250px;
     width: 200px;

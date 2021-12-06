@@ -41,13 +41,13 @@
 
   .wrapper {
     background-color:rgba(251.00000023841858, 223.00000190734863, 219.0000021457672, 1);
-    width:600px;
-    height:500px;
-    position:absolute;
     border-top-left-radius:36px;
     border-top-right-radius:36px;
     border-bottom-left-radius:36px;
     border-bottom-right-radius:36px;
+    margin: auto;
+    min-width: 320px;
+    max-width: 600px;
   }
 
   .Logo { 
