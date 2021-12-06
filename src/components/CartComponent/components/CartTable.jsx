@@ -61,7 +61,7 @@ const CartTable = (props) => {
                 }
             ]}
             data={props.productsArray}
-            title={`Carrinho ( ${props.cartTotalItems} )`}
+            title={`Carrinho`}
             options={{
                 pageSize: 5,
                 headerStyle: {
